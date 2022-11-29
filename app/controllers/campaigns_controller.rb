@@ -1,17 +1,19 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: %i[show destroy]
 
-  def index
-    @campaign = Campaign.all
+  def show
+    authorize @campaign
   end
 
   def new
     @campaign = Campaign.new
+    authorize @campaign
   end
 
   def create
     @campaign = Campaign.new(params_campaign)
     @campaign.user = current_user
+    authorize @campaign
     if @campaign.save
       redirect_to campaign_path(@campaign)
     else
@@ -19,10 +21,8 @@ class CampaignsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def destroy
+    authorize @campaign
     @campaign.destroy
     redirect_to campaigns_path, status: :see_other
   end
