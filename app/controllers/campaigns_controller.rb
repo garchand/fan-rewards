@@ -2,7 +2,7 @@ class CampaignsController < ApplicationController
   before_action :set_campaign, only: %i[show destroy]
 
   def index
-    @campaign = campaign.all
+    @campaign = Campaign.all
   end
 
   def new
@@ -31,7 +31,7 @@ class CampaignsController < ApplicationController
 
   def campaign_params
     params.require(:campaign).permit(:description, :client_benefit, :ambassador_reward, :start_date, :end_date,
-                                      :reward_threshold, :active)
+                                     :reward_threshold, :active)
   end
 
   def set_campaign
