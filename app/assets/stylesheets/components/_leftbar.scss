@@ -1,3 +1,12 @@
+@media (max-width: 600px) {
+  .left-bar{
+      display:none;
+  }
+  .main-content{
+    margin-left: 20px !important;
+  }
+}
+
 .left-bar{
   height: calc(100vh - 68.23px);
   width: 230px;
