@@ -1,0 +1,201 @@
+.card-campaign {
+  overflow: hidden;
+  width: 875px;
+  height: 416px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  .tilte-date{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+.card-campaign>img {
+  height: 213px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-campaign h2 {
+  font-size: 20px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-campaign p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-campaign .card-campaign-infos {
+  padding: 16px;
+  position: relative;
+  height: 203px;
+  box-sizing: border-box;
+
+  .ambassadors{
+    width: 100%;
+    p {
+      height: 21px;
+      overflow: hidden;
+      text-overflow: "----";
+    }
+  }
+  .customers{
+    width: 80%;
+    p{
+      height: 28px;
+      overflow: hidden;
+      text-overflow: "----";
+    }
+  }
+
+  .customers-owner {
+    width: 95%;
+
+    p {
+      height: 28px;
+      overflow: hidden;
+      text-overflow: "----";
+    }
+  }
+
+  ul{
+    margin-left: 23px;
+    padding: 0;
+  }
+
+  li {
+    list-style: square;
+    font-size: 30px;
+  }
+}
+
+.card-campaign-infos .options{
+  position: absolute;
+  padding: 6px;
+  bottom: 17px;
+  right: 16px;
+  background-color: lightgrey;
+  border-radius: 50%;
+  width: 40px;
+  text-align: center;
+}
+
+.card-campaign-infos .card-campaign-user {
+  position: absolute;
+  right: 16px;
+  top: 145px;
+  width: 146px;
+}
+
+.card-new-campaign {
+  padding: 30px;
+  overflow: hidden;
+  width: 875px;
+  height: 818px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  box-sizing: border-box;
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .time{
+    display: flex;
+    justify-content: flex-start;
+    height: 70px;
+  }
+
+  .time-grid{
+    margin-right: 20px;
+  }
+
+  .photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 230px;
+    background-color: grey;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .plus{
+    font-size: 45px;
+    text-align: center;
+    width: 65px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+}
+
+.card-reward{
+  width: 346px;
+  height: 453px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  img {
+    height: 213px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card-reward-infos{
+    width: 100%;
+    height: 240px;
+    box-sizing: border-box;
+    padding: 28px 11px;
+
+    .description{
+      height: 50px;
+      overflow: hidden;
+      text-overflow: "----";
+    }
+
+    p{
+      padding-bottom: 0;
+    }
+  }
+  h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  h1{
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+}
+
+.date-text{
+  font-style: italic;
+}
