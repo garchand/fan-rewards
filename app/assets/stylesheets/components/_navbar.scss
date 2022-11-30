@@ -13,21 +13,3 @@
   width: 125px;
   margin:0 30px;
 }
-
-progress {
-  -webkit-appearance: none;
-  appearance: none;
-
-  width: 100%;
-  height: 17px;
-  border-radius: none !important;
-  accent-color: coral;
-}
-
-::-webkit-progress-bar {
-  background-color: white;
-}
-
-::-webkit-progress-value {
-  background-color: #1C3879;
-}
