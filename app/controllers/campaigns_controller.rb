@@ -6,6 +6,7 @@ class CampaignsController < ApplicationController
   end
 
   def new
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @campaign = Campaign.new
     authorize @campaign
   end

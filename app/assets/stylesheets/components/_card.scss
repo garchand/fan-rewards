@@ -103,6 +103,7 @@
 
 .card-new-event {
   padding: 30px;
+  margin: 30px;
   overflow: hidden;
   width: 875px;
   height: 818px;
@@ -153,12 +154,12 @@
 
   .duo-grid{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     height: 95px;
     margin-top: 7px;
 
     .duo-grid-element{
-      margin-right: 50px;
+      width: 45%;
     }
   }
 
