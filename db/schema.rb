@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_133853) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_094120) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,18 +21,31 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_133853) do
     t.string "ambassador_reward"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer "reward_threshold"
-    t.boolean "active"
+    t.integer "reward_threshold", default: 0
+    t.boolean "active", default: true
     t.bigint "restaurant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["restaurant_id"], name: "index_campaigns_on_restaurant_id"
   end
 
+  create_table "campaigns_ambassadors", force: :cascade do |t|
+    t.bigint "campaign_id", null: false
+    t.bigint "user_id", null: false
+    t.string "client_code"
+    t.integer "referrals_count"
+    t.string "reward_status"
+    t.string "ambassador_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_campaigns_ambassadors_on_campaign_id"
+    t.index ["user_id"], name: "index_campaigns_ambassadors_on_user_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "description"
+    t.string "name", default: "", null: false
+    t.string "address", default: ""
+    t.string "description", default: ""
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,5 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_133853) do
   end
 
   add_foreign_key "campaigns", "restaurants"
+  add_foreign_key "campaigns_ambassadors", "campaigns"
+  add_foreign_key "campaigns_ambassadors", "users"
   add_foreign_key "restaurants", "users"
 end

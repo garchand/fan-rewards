@@ -11,4 +11,9 @@
 @import "components/index";
 @import "pages/index";
 @import "components/sendqr";
-@import "components/printqr"
+@import "components/printqr";
+
+.main-container {
+  display: flex;
+}
+

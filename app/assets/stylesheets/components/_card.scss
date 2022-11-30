@@ -1,11 +1,12 @@
 .card-campaign {
   margin: 30px 30px 0 30px;
   overflow: hidden;
-  width: 875px;
+  max-width: 875px;
   height: 416px;
   border-radius: 10px;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
   .tilte-date{
     display: flex;
     width: 100%;
@@ -211,4 +212,23 @@
 
 .date-text{
   font-style: italic;
+}
+
+
+.create-campaign-card {
+  margin: 30px 30px 0 30px;
+  padding: 20px 20px;
+  overflow: hidden;
+  max-width: 200px;
+  height: 130px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align:center;
+  position: sticky;
+  top: 0;
+
+  h1 {
+    font-size: 18px;
+  }
 }
