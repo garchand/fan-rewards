@@ -1,8 +1,7 @@
 <div class="box-qr">
   <div class="box-qr-image">
-    <i class="fa-solid fa-gift image-center"></i>
+    <i class="fa-solid fa-qrcode"></i>
   </div>
-
   <div class="box-qr-text">
     <div class="box-qr-text-child">
       <h2>Code promo débloqué !</h2>
@@ -28,15 +27,17 @@
 
 <br>
 
-<div class="box-qr">
-  <div class="box-qr-image">
-    <i class="fa-solid fa-gift image-center"></i>
-  </div>
+<%= link_to restaurants_path, class: "display-text-decoration-none" do %>
+  <div class="box-qr">
+    <div class="box-qr-image">
+      <i class="fa-solid fa-gift image-center"></i>
+    </div>
 
-  <div class="box-qr-text">
-    <div class="box-qr-text-child">
-      <h2>Récompense débloquée !</h2>
-      <p>Clique ici pour obtenir ta récompense</p>
+    <div class="box-qr-text">
+      <div class="box-qr-text-child">
+        <h2>Récompense débloquée !</h2>
+        <p>Clique ici pour obtenir ta récompense</p>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
