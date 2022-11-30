@@ -6,6 +6,8 @@
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
+  margin: 10px 0px;
+
 }
 
 .box-qr-image {
@@ -30,17 +32,29 @@ i {
 }
 
 //A modifier avec Julien
-h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 0;
+.box-qr-text-child > h2 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  margin-bottom: 0 !important;
 }
 
-p {
-  font-size: 16px;
-  margin-bottom: 0;
+.box-qr-text-child > p {
+  font-size: 16px !important;
+  margin-bottom: 0 !important;
 }
 //A modifier avec Julien
+.box-qr-text-child {
+  font-size: 0px !important;
+}
+
+
+.ambassadors > .btn-none {
+  font-size: 100%;
+  font-family: inherit;
+  background-color: white;
+  border: 0;
+  padding: 0;
+}
 
 .display-text-decoration-none, .display-text-decoration-none:hover, .display-text-decoration-none:focus, .display-text-decoration-none:active {
   text-decoration: none !important;
