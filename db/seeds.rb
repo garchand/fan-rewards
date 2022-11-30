@@ -1,5 +1,6 @@
 require 'faker'
 
+CampaignsAmbassador.destroy_all
 Campaign.destroy_all
 Restaurant.destroy_all
 User.destroy_all
@@ -18,5 +19,14 @@ p "Users created"
                      start_date: date, end_date: date.next_day, reward_threshold: 3,
                      active: true, restaurant_id: Restaurant.last.id)
     p "Campaign created"
+  end
+end
+
+10.times do
+  user = User.all.sample
+  campaign = Campaign.all.sample.id.to_i
+  unless user.campaigns.all.ids.include?(campaign)
+    CampaignsAmbassador.create!(user_id: user.id, campaign_id: campaign)
+    p "ambassador created"
   end
 end

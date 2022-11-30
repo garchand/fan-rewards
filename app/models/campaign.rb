@@ -1,5 +1,7 @@
 class Campaign < ApplicationRecord
   belongs_to :restaurant
+  has_many :campaigns_ambassadors
+  has_many :users, through: :campaigns_ambassadors
 
   validates :description, presence: true
   validates :client_benefit, presence: true

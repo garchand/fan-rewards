@@ -8,7 +8,7 @@ class CampaignsController < ApplicationController
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @campaign = Campaign.new
-    authorize @campaign
+    authorize @campaign if current_user.restaurant_ids.include?(params[:restaurant_id].to_i)
   end
 
   def create
