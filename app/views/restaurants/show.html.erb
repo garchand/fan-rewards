@@ -1,5 +1,1 @@
-<%= @restaurant.name %>
-<% @restaurant.campaigns.each do |campaign| %>
-  <%= campaign.description  %>
-  <br>
-<% end %>
+<%= render 'shared/campaign_card_owner', restaurant: @restaurant %>
