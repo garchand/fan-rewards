@@ -1,5 +1,4 @@
-<%= @restaurant.name %>
-<% @restaurant.campaigns.each do |campaign| %>
-  <%= campaign.description  %>
-  <br>
-<% end %>
+<div class = "d-flex">
+  <%= render 'shared/campaign_card_owner', restaurant: @restaurant %>
+  <%= render 'shared/campaign_create_card', restaurant: @restaurant %>
+</div>

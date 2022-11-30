@@ -1,7 +1,17 @@
+@media (max-width: 600px) {
+  .left-bar{
+      display:none;
+  }
+  .main-content{
+    margin-left: 20px !important;
+  }
+}
+
 .left-bar{
-  height: calc(100vh - 68.23px);
-  width: 230px;
-  position: absolute;
+  height: 100vh;
+  flex: 0 0 230px;
+  position: sticky;
+  top: 0;
   background-color:white;
   padding-top: 30px;
   padding-left: 30px;
