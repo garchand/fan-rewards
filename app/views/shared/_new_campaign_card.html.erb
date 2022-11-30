@@ -1,42 +1,5 @@
 <div class="card-new-event">
   <h1>Create new campaign</h1>
-
-  <h2>Type de campagne</h2>
-  <input type="text" placeholder="address" style="width:100%">
-  <h2>Nouveau client</h2>
-  <input type="text" placeholder="address" style="width:100%">
-  <div class="duo-grid">
-    <div class="duo-grid-element" >
-      <h2>Ambassadeur</h2>
-      <input type="text" name="date" style="width: 382px" >
-    </div>
-    <div class="duo-grid-element" >
-      <h2>Condition pour les nouveaux clients</h2>
-      <input type="number" name="numbers" style="width: 382px" >
-    </div>
-  </div>
-
-  <div class="duo-grid">
-    <div class="duo-grid-element" >
-      <h2>Date de début</h2>
-      <input type="date" name="date" style="width: 382px" >
-    </div>
-    <div class="duo-grid-element" >
-      <h2>Date de fin</h2>
-      <input type="date" name="date" style="width: 382px" >
-    </div>
-  </div>
-
-  <h2>Photo</h2>
-  <div class="photo">
-    <div class="plus">+</div>
-  </div>
-
-  <button class="card-event-user text-white btn bg-dark mt-4 border-radius-1 w-100">Join</button>
-</div>
-
-<div class="card-new-event">
-  <h1>Create new campaign</h1>
   <%= simple_form_for [restaurant, campaign],
                       html: { class: 'main-card-form', data: {controller:'flatpickr'}
                       } do |f| %>
