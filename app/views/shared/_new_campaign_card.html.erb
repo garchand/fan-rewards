@@ -1,23 +1,48 @@
-<div class="card-new-campaign">
-  <h1>Create new event</h1>
+<div class="card-new-event">
+  <h1>Create new campaign</h1>
+  <%= simple_form_for [restaurant, campaign],
+                      html: { class: 'main-card-form', data: {controller:'flatpickr'}
+                      } do |f| %>
+    <h2>Type de campagne</h2>
+    <%= f.input :description, style:"width:100%", placeholder: "campagne de recommandation", label: false %>
+    <h2>Nouveau client</h2>
+    <%= f.input :client_benefit, style:"width:100%", placeholder: "nouveau client", label: false %>
+  <div class="duo-grid">
+    <div class="duo-grid-element" >
+      <h2>Ambassadeur</h2>
+      <%= f.input :ambassador_reward, placeholder: "nouveau client", label: false %>
+    </div>
+    <div class="duo-grid-element" >
+      <h2>Condition validation</h2>
+      <%= f.input :reward_threshold, placeholder: "nouveau client", label: false %>
+    </div>
+  </div>
 
-  <h2>Description:</h2>
-  <textarea name="description" id="" cols="93%" rows="5"></textarea>
-  <h2>Address:</h2>
-  <input type="text" placeholder="address" style="width:100%">
-  <h2>Date & Time</h2>
-  <div class="time">
-    <div class="time-grid" >
-      <p>Date</p>
-      <input type="date" name="date" style="width: 250px" >
+  <div class="duo-grid">
+    <div class="duo-grid-element" >
+      <h2>Date de fin</h2>
+      <%= f.input :start_date,
+                  as: :string,
+                  label: false,
+                  input_html: {
+                  class: "main-card-input",
+                  data: {
+                  flatpickr_target: 'startDateInput',
+                  action: "flatpickr#start"
+      } } %>
     </div>
-    <div class="time-grid" >
-      <p>start time</p>
-      <input type="time" name="date" style="width: 250px" >
-    </div>
-    <div class="time-grid" >
-      <p>end time</p>
-      <input type="time" name="date" style="width: 250px" >
+    <div class="duo-grid-element" >
+      <h2>Date de fin</h2>
+      <%= f.input :end_date,
+                  label: false,
+                  as: :string,
+                  input_html: {
+                  class: "main-card-input",
+                  data: {
+                  flatpickr_target: 'endDateInput',
+                  id: 'haha'
+                  }
+      } %>
     </div>
   </div>
 
@@ -25,6 +50,6 @@
   <div class="photo">
     <div class="plus">+</div>
   </div>
-
-  <button class="card-campaign-user text-white btn bg-dark mt-3 border-radius-1 w-100">Join</button>
+  <%= f.submit "Créer une nouvelle campagne", class:"card-event-user text-white btn bg-dark mt-4 border-radius-1 w-100" %>
+  <% end %>
 </div>
