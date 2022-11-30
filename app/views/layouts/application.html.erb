@@ -13,7 +13,7 @@
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
     <div class="main-container">
-      <% if controller_name != "restaurants" && action_name != "index"%>
+      <% if controller_name == "restaurants" && action_name != "index"%>
         <%= render "shared/leftbar" %>
       <% end %>
       <div class="main-content">
