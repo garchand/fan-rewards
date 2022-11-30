@@ -94,14 +94,14 @@
   text-align: center;
 }
 
-.card-campaign-infos .card-campaign-user {
+.card-campaign-infos .card-event-user {
   position: absolute;
   right: 16px;
   top: 145px;
   width: 146px;
 }
 
-.card-new-campaign {
+.card-new-event {
   padding: 30px;
   overflow: hidden;
   width: 875px;
@@ -151,8 +151,20 @@
     font-weight: bolder;
   }
 
+  .duo-grid{
+    display: flex;
+    justify-content: flex-start;
+    height: 95px;
+    margin-top: 7px;
+
+    .duo-grid-element{
+      margin-right: 50px;
+    }
+  }
+
   h2{
     font-size: 20px;
+    margin-bottom: 10px;
   }
 }
 
