@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_133853) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_094120) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "campaigns", force: :cascade do |t|
-    t.string "description"
-    t.string "client_benefit"
-    t.string "ambassador_reward"
+    t.string "description", default: ""
+    t.string "client_benefit", default: ""
+    t.string "ambassador_reward", default: ""
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer "reward_threshold"
-    t.boolean "active"
+    t.integer "reward_threshold", default: 0
+    t.boolean "active", default: true
     t.bigint "restaurant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,9 +29,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_133853) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "description"
+    t.string "name", default: "", null: false
+    t.string "address", default: ""
+    t.string "description", default: ""
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
