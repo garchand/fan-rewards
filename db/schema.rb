@@ -16,9 +16,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_094120) do
   enable_extension "plpgsql"
 
   create_table "campaigns", force: :cascade do |t|
-    t.string "description", default: ""
-    t.string "client_benefit", default: ""
-    t.string "ambassador_reward", default: ""
+    t.string "description"
+    t.string "client_benefit"
+    t.string "ambassador_reward"
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer "reward_threshold", default: 0
