@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :campaigns, only: %i[show update] do
     resources :campaigns_ambassadors, only: %i[create]
   end
+  get "stats", to: "pages#stats"
 end
