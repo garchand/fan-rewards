@@ -10,5 +10,4 @@ class Campaign < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :reward_threshold, presence: true
-  validates :active, presence: true
 end

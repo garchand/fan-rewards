@@ -1,5 +1,4 @@
 
-
 <% @restaurant.campaigns.each do |campaign| %>
   <div class="card-campaign">
     <% if campaign.photo.attached? %>
@@ -34,10 +33,11 @@
       <!-- condition à ajouter -->
         <li class="customers">
           <h2>Progression récompense ambassadeur</h2>
-            <!-- condition à ajouter -->
-            <%= render "shared/progress" %>
-            <!-- condition à ajouter -->
+          <% if campaign.campaigns_ambassador_ids.count >= campaign.reward_threshold %>
             <%= render "shared/progress_full" %>
+          <% else %>
+            <%= render "shared/progress", threshold: campaign.reward_threshold, count: campaign.campaigns_ambassador_ids.count %>
+          <% end %>
         </li>
       </ul>
     </div>
