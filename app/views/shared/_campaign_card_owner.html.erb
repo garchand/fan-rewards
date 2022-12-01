@@ -1,8 +1,11 @@
 <div data-controller="change-position" data-change-position-target="cards" >
 <% @restaurant.campaigns.select{ |campaign| campaign.active == true}.each do |campaign| %>
   <div class="card-campaign" data-controller="campaign-cancel" data-campaign-cancel-target="card" data-change-position-target="card" >
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-campaign-infos">
+      <% if campaign.photo.attached? %>
+        <%= cl_image_tag campaign.photo.key %>
+      <% else %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <% end %>    <div class="card-campaign-infos">
       <div class="tilte-date">
         <h1> <%= campaign.id %> </h1>
         <p class="date-text">Dates : <%= campaign.start_date.to_date %> - <%= campaign.start_date.to_date %></p>
@@ -35,8 +38,11 @@
 
 <% @restaurant.campaigns.reject{ |campaign| campaign.active == true}.each do |campaign| %>
   <div class="card-campaign grey" data-controller="campaign-cancel" data-campaign-cancel-target="card" data-change-position-target="card" >
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-campaign-infos">
+      <% if campaign.photo.attached? %>
+        <%= cl_image_tag campaign.photo.key %>
+      <% else %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <% end %>    <div class="card-campaign-infos">
       <div class="tilte-date">
         <h1> <%= campaign.id %> </h1>
         <p class="date-text">Dates : <%= campaign.start_date.to_date %> - <%= campaign.start_date.to_date %></p>
@@ -63,7 +69,6 @@
           </ul>
         </li>
     </div>
-  </div>
-
-<% end %>
+   </div>
+  <% end %>
 </div>
