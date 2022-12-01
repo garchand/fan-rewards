@@ -9,3 +9,6 @@ application.register("flatpickr", FlatpickrController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ImageInputController from "./image_input_controller"
+application.register("image-input", ImageInputController)

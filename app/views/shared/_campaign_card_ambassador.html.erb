@@ -2,7 +2,11 @@
 
 <% @restaurant.campaigns.each do |campaign| %>
   <div class="card-campaign">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% if campaign.photo.attached? %>
+      <%= cl_image_tag campaign.photo.key %>
+    <% else %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% end %>
     <div class="card-campaign-infos">
       <div class="tilte-date">
         <h1>Campagne 1</h1>
