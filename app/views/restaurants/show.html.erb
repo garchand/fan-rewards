@@ -1,4 +1,8 @@
-<div class = "d-flex">
-  <%= render 'shared/campaign_card_owner', restaurant: @restaurant %>
-  <%= render 'shared/campaign_create_card', restaurant: @restaurant %>
+<div class = "d-flex justify-content-center flex-wrap">
+  <% if @restaurant.user == current_user %>
+    <%= render 'shared/campaign_card_owner', restaurant: @restaurant %>
+    <%= render 'shared/campaign_create_card', restaurant: @restaurant %>
+  <% else %>
+      <%= render 'shared/campaign_card_ambassador', restaurant: @restaurant %>
+  <% end %>
 </div>

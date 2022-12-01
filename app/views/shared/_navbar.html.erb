@@ -1,21 +1,26 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "frlogo.png" %>
+    <% unless current_user.nil? %>
+      <% current_user.restaurants.count > 0 ? path = restaurant_path(current_user.restaurants.first) : path = restaurants_path %>
+      <%= link_to path, class: "navbar-brand" do %>
+        <%= image_tag "frlogo.png" %>
+      <% end %>
+    <% else %>
+      <%= link_to "#", class: "navbar-brand" do %>
+        <%= image_tag "frlogo.png" %>
+      <% end %>
     <% end %>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-      <li class="nav-item">
-            <a class="nav-link">Maison de la Poutine</a>
-          </li>
         <% if user_signed_in? %>
+          <li class="nav-item">
+            <a class="nav-link"><%= "#{current_user.first_name} #{current_user.last_name}"%></a>
+          </li>
           <li class="nav-item dropdown">
-            <%= image_tag "avatar.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Settings", "#", class: "dropdown-item" %>
               <%= link_to "My Restaurant", "#", class: "dropdown-item" %>
