@@ -16,4 +16,6 @@
 
 .main-container {
   display: flex;
+  height: calc(100vh - 70px); // -> restaurants#index
+  overflow: hidden; // -> restaurants#index
 }
