@@ -1,7 +1,8 @@
 <div class="left-bar">
   <ul>
     <li class="left-bar-links">
-    <%= link_to restaurants_path do  %>
+    <% my_restaurant = current_user.restaurants.first %>
+    <%= link_to restaurant_path(my_restaurant) do  %>
       <i class="fa-sharp fa-solid fa-bullseye leftbar-icon"></i>Campagnes
     <% end %>
     </li>
