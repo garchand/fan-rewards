@@ -22,7 +22,20 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name usernamme])
   end
 
+  def after_sign_in_path_for(resource)
+    if current_user.restaurant_ids != []
+      restaurant_path(@current_user.restaurants.first)
+    else
+      restaurants_path
+    end
+  end
+
+  def after_sign_up_path_for(resource)
+    restaurants_path
+  end
+
   private
+
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
