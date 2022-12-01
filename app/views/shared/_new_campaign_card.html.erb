@@ -7,21 +7,20 @@
     <%= f.input :description, style:"width:100%", placeholder: "campagne de recommandation", label: false %>
     <h2>Nouveau client</h2>
     <%= f.input :client_benefit, style:"width:100%", placeholder: "nouveau client", label: false %>
-  <div class="duo-grid">
-    <div class="duo-grid-element" >
-      <h2>Ambassadeur</h2>
-      <%= f.input :ambassador_reward, placeholder: "nouveau client", label: false %>
+    <div class="duo-grid">
+      <div class="duo-grid-element" >
+        <h2>Ambassadeur</h2>
+        <%= f.input :ambassador_reward, placeholder: "nouveau client", label: false %>
+      </div>
+      <div class="duo-grid-element" >
+        <h2>Condition validation</h2>
+        <%= f.input :reward_threshold, placeholder: "nouveau client", label: false %>
+      </div>
     </div>
-    <div class="duo-grid-element" >
-      <h2>Condition validation</h2>
-      <%= f.input :reward_threshold, placeholder: "nouveau client", label: false %>
-    </div>
-  </div>
-
-  <div class="duo-grid">
-    <div class="duo-grid-element" >
-      <h2>Date de fin</h2>
-      <%= f.input :start_date,
+    <div class="duo-grid">
+      <div class="duo-grid-element" >
+        <h2>Date de début</h2>
+        <%= f.input :start_date,
                   as: :string,
                   label: false,
                   input_html: {
@@ -30,10 +29,10 @@
                   flatpickr_target: 'startDateInput',
                   action: "flatpickr#start"
       } } %>
-    </div>
-    <div class="duo-grid-element" >
-      <h2>Date de fin</h2>
-      <%= f.input :end_date,
+      </div>
+      <div class="duo-grid-element" >
+        <h2>Date de fin</h2>
+        <%= f.input :end_date,
                   label: false,
                   as: :string,
                   input_html: {
@@ -43,13 +42,16 @@
                   id: 'haha'
                   }
       } %>
+      </div>
     </div>
-  </div>
-
-  <h2>Photo</h2>
-  <div class="photo">
-    <div class="plus">+</div>
-  </div>
-  <%= f.submit "Créer une nouvelle campagne", class:"card-event-user text-white btn bg-dark mt-4 border-radius-1 w-100" %>
+    <div data-controller="image-input">
+      <h2>Photo</h2>
+      <div class="photo" data-action="click->image-input#addImage">
+        <div class="text-sticky-image d-none" data-image-input-target="message">Votre image a bien été inséréee</div>
+        <div class="plus">+</div>
+      </div>
+      <%= f.input :photo, as: :file, label: false , input_html: { class:'d-none', data: {image_input_target: "input", action: "change->image-input#inputChange"}} %>
+    </div>
+    <%= f.submit "Créer une nouvelle campagne", class:"card-event-user text-white btn bg-dark mt-2 border-radius-1 w-100" %>
   <% end %>
 </div>
