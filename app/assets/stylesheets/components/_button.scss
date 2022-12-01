@@ -43,3 +43,18 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-large {
+  width: 100%;
+  min-height: 40px;
+  margin: 10px 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: darkblue;
+  color: white;
+  border-style: none;
+}
+
+.btn-large:hover {
+  background: #4D04C4;
+  color: white;
+}
