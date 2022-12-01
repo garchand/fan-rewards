@@ -10,10 +10,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-      <li class="nav-item">
-            <a class="nav-link">Maison de la Poutine</a>
-          </li>
         <% if user_signed_in? %>
+          <li class="nav-item">
+            <a class="nav-link"><%= "#{current_user.first_name} #{current_user.last_name}"%></a>
+          </li>
           <li class="nav-item dropdown">
             <%= image_tag "avatar.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
