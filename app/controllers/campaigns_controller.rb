@@ -1,5 +1,5 @@
 class CampaignsController < ApplicationController
-  before_action :set_campaign, only: %i[show destroy]
+  before_action :set_campaign, only: %i[show destroy update]
   before_action :set_restaurant, only: %i[new create]
 
   def show
@@ -19,6 +19,15 @@ class CampaignsController < ApplicationController
       redirect_to restaurant_path(@restaurant)
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    authorize @campaign
+    @campaign.update(active: "false")
+    respond_to do |format|
+      format.html { redirect_to restaurants_path }
+      format.text { head :ok }
     end
   end
 
