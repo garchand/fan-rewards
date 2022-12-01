@@ -239,7 +239,6 @@
 }
 
 .restaurant-card {
-  margin: 30px;
   overflow: hidden;
   width: 200px;
   height: 100px;
@@ -254,14 +253,15 @@
   justify-content: center;
 }
 
-.restaurant-card a {
+.restaurant-card-list a {
   text-decoration: none;
   color:white;
+  margin: 30px;
 }
 
 .card-half {
   width: 500px;
-  margin: 30px;
+  margin: 30px auto;
   flex-grow: 1;
   padding: 30px;
   background-color: white;
