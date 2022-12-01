@@ -1,11 +1,19 @@
 <div class="left-bar">
   <ul>
     <li class="left-bar-links">
-    <%= link_to restaurants_path do  %>
+    <% if user_signed_in? && current_user.restaurants.count > 0 %>
+    <% my_restaurant = current_user.restaurants.first %>
+    <% path = restaurant_path(my_restaurant) %>
+    <% user_restaurant_owner = true %>
+    <% else %>
+    <% path = "#" %>
+    <% user_restaurant_owner = false %>
+    <% end %>
+    <%= link_to path do  %>
       <i class="fa-sharp fa-solid fa-bullseye leftbar-icon"></i>Campagnes
     <% end %>
     </li>
-    <li class="left-bar-links">
+    <li class="left-bar-links <%= "d-none" if user_restaurant_owner == false %>"  >
       <i class="fa-solid fa-signal leftbar-icon"></i><%= link_to "Statistiques"%>
     </li>
     <li class="left-bar-links">
@@ -14,7 +22,7 @@
     <li class="left-bar-links">
       <i class="fa-regular fa-calendar leftbar-icon"></i><%= link_to "Evénements" %>
     </li>
-    <li class="left-bar-links">
+    <li class="left-bar-links <%= "d-none" if user_restaurant_owner == false %>">
       <i class="fa-solid fa-people-arrows leftbar-icon"></i><%= link_to "Ambassadeurs" %>
     </li>
     <li class="left-bar-links">

@@ -1,0 +1,46 @@
+.box-stats {
+  background-color: white;
+  color: black;
+  width: 25%;
+  padding: 8px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.transparent-div{
+  opacity:0;
+}
+.circle-icon {
+  color: #1C3879;
+  position: absolute;
+  font-size: 15px;
+
+}
+
+.text-box-stats {
+  padding: 34px;
+  text-align: center;
+}
+
+.box {
+  display: flex;
+
+}
+
+.main-content {
+    width: calc(100vw - 230px);
+}
+
+.nav-tabs .active {
+  color:#1C3879;
+  font-weight: bold;
+}
+
+.box-stats:has(> div.active) {
+  background-color: #F3F5FF;
+}
+
+.stats-number {
+  font-size: 25px;
+  font-weight: bold;
+}

@@ -4,4 +4,8 @@ class PagesController < ApplicationController
   def home
 
   end
+
+  def stats
+    @ambassadors = User.find(6).restaurants_ambassadors
+  end
 end
