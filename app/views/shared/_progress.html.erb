@@ -5,8 +5,8 @@
 
   <div class="box-qr-text">
     <div class="box-qr-text-child">
-      <p>3 recommandations sur 4 effectuées</p>
-      <progress id="file" max="100" value="70"> 70% </progress>
+      <p><%= count %> recommandations sur <%= threshold %> effectuées</p>
+      <progress id="file" max="100" value="<%= (count.to_f / threshold.to_f) * 100 %>" ></progress>
     </div>
   </div>
 </div>
