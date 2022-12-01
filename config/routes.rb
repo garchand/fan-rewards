@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :restaurants, only: %i[index new create show] do
     resources :campaigns, only: %i[new create]
   end
-  resources :campaign, only: %i[show] do
+  resources :campaigns, only: %i[show update] do
     resources :campaigns_ambassadors, only: %i[create]
   end
 end
