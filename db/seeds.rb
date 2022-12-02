@@ -63,14 +63,14 @@ puts "Marie et la maison de Marie créés"
 
 date5 = Faker::Date.in_date_period
 file5 = URI.open('https://www.shutterstock.com/image-photo/salad-tomatoes-cucumber-red-onions-260nw-1086358910.jpg')
-promotion_salad = Campaign.create!(description: "Promotion nouvelle salade 5 ingrédients", client_benefit: "-20% sur une salade avec 5 ingrédients", ambassador_reward: "Un menu offert pour 3 nouvelles recommandations obtenues", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaisondemarie.id)
+promotion_salad = Campaign.create!(description: "Promotion nouvelle salade 5 ingrédients", client_benefit: "-20% sur une salade avec 5 ingrédients", ambassador_reward: "Un menu offert pour 2 nouvelles recommandations obtenues", start_date: date, end_date: date.next_day, reward_threshold: 2, active: true, restaurant_id: lamaisondemarie.id)
 promotion_salad.photo.attach(io: file5, filename: 'nes.png', content_type: 'image/jpg')
 puts "Première salade créée"
 
 
 date6 = Faker::Date.in_date_period
 file6 = URI.open('https://4.bp.blogspot.com/-3dy-wPcJwiM/Vt2fYHFtIII/AAAAAAAADXM/BYYmMa_jSJQ/s1600/n.JPG')
-promotion_salad2 = Campaign.create!(description: "Promotion nouvelle offre", client_benefit: "Un topping offert pour chaque salade achetée", ambassador_reward: "Un topping offert pour 2 nouvelles recommandations obtenues", start_date: date, end_date: date.next_day, reward_threshold: 2, active: true, restaurant_id: lamaisondemarie.id)
+promotion_salad2 = Campaign.create!(description: "Promotion nouvelle offre", client_benefit: "Un topping offert pour chaque salade achetée", ambassador_reward: "Un topping offert pour 3 nouvelles recommandations obtenues", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaisondemarie.id)
 promotion_salad2.photo.attach(io: file6, filename: 'nes.png', content_type: 'image/jpg')
 
 puts "Seconde salade créée"
