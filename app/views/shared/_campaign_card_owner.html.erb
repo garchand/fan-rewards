@@ -1,5 +1,5 @@
 <div data-controller="change-position" data-change-position-target="cards" >
-  <% @restaurant.campaigns.select{ |campaign| campaign.active == true}.each do |campaign| %>
+  <% @restaurant.campaigns.order(created_at: :desc).select{ |campaign| campaign.active == true}.each do |campaign| %>
     <div class="card-campaign" data-controller="campaign-cancel" data-campaign-cancel-target="card" data-change-position-target="card" >
       <% if campaign.photo.attached? %>
         <%= cl_image_tag campaign.photo.key %>
@@ -33,7 +33,7 @@
       </div>
     </div>
   <% end %>
-  <% @restaurant.campaigns.reject{ |campaign| campaign.active == true}.each do |campaign| %>
+  <% @restaurant.campaigns.order(created_at: :desc).reject{ |campaign| campaign.active == true}.each do |campaign| %>
     <div class="card-campaign grey" data-controller="campaign-cancel" data-campaign-cancel-target="card" data-change-position-target="card" >
       <% if campaign.photo.attached? %>
         <%= cl_image_tag campaign.photo.key %>

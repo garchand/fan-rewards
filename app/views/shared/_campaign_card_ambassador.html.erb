@@ -1,5 +1,5 @@
 
-<% @restaurant.campaigns.each do |campaign| %>
+<% @restaurant.campaigns.order(created_at: :desc).each do |campaign| %>
   <div class="card-campaign card-ambassador">
     <% if campaign.photo.attached? %>
       <%= cl_image_tag campaign.photo.key %>
