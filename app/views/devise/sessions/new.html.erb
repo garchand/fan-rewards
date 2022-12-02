@@ -1,22 +1,23 @@
 <div class="card-half semi">
-<h2>Log in</h2><br>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {data: { turbo: false}}) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {data: { turbo: false}}) do |f| %>
+    <div class="form-inputs font-size-form-h2">
+      <h1>Connexion</h1>
+      <h2>Email</h2>
+      <%= f.input :email,
                 required: false,
                 autofocus: true,
+                label: false,
                 input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
+      <h2>Mot de passe</h2>
+      <%= f.input :password,
                 required: false,
+                label: false,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", class: 'btn-large' %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Connexion", class: 'btn-large' %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
 </div>
