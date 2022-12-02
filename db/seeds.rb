@@ -54,3 +54,8 @@ file3 = URI.open('https://img-3.journaldesfemmes.fr/bFLBfIV2xQoIMyxLHn-ya2A4jO4=
 promotion_dessert = Campaign.create!(description: "Notre nouveau gâteau au chocolat préféré", client_benefit: "Un gâteau au chocolat acheté = un gâteau au chocolat gratuit", ambassador_reward: "Un menu offert pour 3 nouvelles recommandations obtenues", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaison.id)
 promotion_dessert.photo.attach(io: file3, filename: 'nes.png', content_type: 'image/jpg')
 puts "Gâteau au chocolat créé"
+
+
+marie = User.create!(email: "marie.macquart@gmail.com", password: "1234567890", first_name: "Marie", last_name: "Macquart", username: "MarieMacquart")
+lamaisondemarie = Restaurant.create!(name: "Salad Bar", description: "Un salad bar en plein centre de Paris." , address: "4 rue de la nourriture", user_id: marie.id)
+puts "Marie et la maison de Marie créés"
