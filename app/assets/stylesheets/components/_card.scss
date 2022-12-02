@@ -19,6 +19,10 @@
 
 }
 
+.card-ambassador{
+  width: 925px !important;
+}
+
 .grey {
   opacity: 0.5;
 }
@@ -280,4 +284,18 @@
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 6px;
+}
+
+.in-line-div {
+  display: flex;
+}
+
+.margin-left-3 {
+  margin-right: 30px;
+}
+
+.middle-text {
+  margin: auto;
+  font-size: 25px;
+  margin-top: 10px;
 }

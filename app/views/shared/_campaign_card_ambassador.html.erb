@@ -1,6 +1,6 @@
 
 <% @restaurant.campaigns.each do |campaign| %>
-  <div class="card-campaign">
+  <div class="card-campaign card-ambassador">
     <% if campaign.photo.attached? %>
       <%= cl_image_tag campaign.photo.key %>
     <% else %>
@@ -12,13 +12,10 @@
         <p class="date-text">Dates : <%= campaign.start_date.to_date %> - <%= campaign.end_date.to_date %></p>
       </div>
       <ul>
-        <li class="ambassadors">
-        <h2>Récompense ambassadeur</h2>
-        <p>
-          <%= campaign.client_benefit %>
-        </p>
-        </li>
-        <li class="ambassadors">
+
+        <div class="in-line-div">
+
+        <li class="ambassadors margin-left-3">
         <h2>Avantage nouveau client</h2>
         <p>
           <%= campaign.ambassador_reward %>
@@ -29,16 +26,27 @@
           </button>
         </li>
 
+
+
+        <li class="ambassadors">
+        <h2>Récompense ambassadeur</h2>
+        <p>
+          <%= campaign.client_benefit %>
+        </p>
+
+
       <!--  <a class="btn btn-flat card-campaign-user" href="#">join</a> -->
       <!-- condition à ajouter -->
-        <li class="customers">
-          <h2>Progression récompense ambassadeur</h2>
           <% if campaign.campaigns_ambassador_ids.count >= campaign.reward_threshold %>
-            <%= render "shared/progress_full" %>
+              <button type="button" class="btn-none" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                <%= render "shared/progress_full" %>
+              </button>
           <% else %>
             <%= render "shared/progress", threshold: campaign.reward_threshold, count: campaign.campaigns_ambassador_ids.count %>
           <% end %>
         </li>
+
+        </div>
       </ul>
     </div>
   </div>
@@ -52,9 +60,43 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">QR Code promotion</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
+      <div class="modal-body">
+        <%= image_tag "qrcode.png", class: "qr-code-img" %>
+      </div>
+      <h1 class="middle-text">Transmettez ce QR code à vos amis !</h1>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Récompense débloquée !</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
       <div class="modal-body">
         <%= image_tag "qrcode.png", class: "qr-code-img" %>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+setTimeout(fakeit, 3000, [33, 1]);
+setTimeout(fakeit, 6000, [66, 2]);
+setTimeout(fakeit, 9000, [100, 3]);
+setTimeout(fakeitverymuch, 12000);
+
+function fakeit(a) {
+  document.getElementsByClassName("box-qr-text-child")[1].innerHTML = '\n      <p> ' + a[1] + ' recommandations sur 3 effectuées</p>\n      <progress id="file" max="100" value="' + a[0] + '"></progress>\n';
+}
+
+function fakeitverymuch() {
+  document.getElementsByClassName("box-qr-text-child")[1].innerHTML = '\n        <h2>Récompense débloquée !</h2>\n        <p>Clique ici pour obtenir ta récompense</p>\n      ';
+}
+
+
+</script>
