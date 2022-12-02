@@ -76,7 +76,7 @@ promotion_salad2.photo.attach(io: file6, filename: 'nes.png', content_type: 'ima
 puts "Seconde salade créée"
 
 
-a = CampaignsAmbassador.create(campaign: promotion_salad2, user: jean_ambassador)
-b = CampaignsAmbassador.create(campaign: promotion_salad2, user: jean_ambassador)
+a = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
+b = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
 a.save!
 b.save!
