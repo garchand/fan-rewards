@@ -1,20 +1,20 @@
 <div class="card-new-event">
-  <h1>Create new campaign</h1>
+  <h1><strong>Créer une nouvelle campagne de recommandation</strong></h1>
   <%= simple_form_for [restaurant, campaign],
                       html: { class: 'main-card-form', data: {controller:'flatpickr'}
                       } do |f| %>
-    <h2>Type de campagne</h2>
-    <%= f.input :description, style:"width:100%", placeholder: "campagne de recommandation", label: false %>
-    <h2>Nouveau client</h2>
-    <%= f.input :client_benefit, style:"width:100%", placeholder: "nouveau client", label: false %>
+    <h2>Titre de la campagne</h2>
+    <%= f.input :description, style:"width:100%", placeholder: "Ex: Promotion du nouveau produit ...", label: false %>
+    <h2>Avantage nouveau client</h2>
+    <%= f.input :client_benefit, style:"width:100%", placeholder: "-X% sur nouveau produit ...", label: false %>
     <div class="duo-grid">
       <div class="duo-grid-element" >
-        <h2>Ambassadeur</h2>
-        <%= f.input :ambassador_reward, placeholder: "nouveau client", label: false %>
+        <h2>Récompense ambassadeur</h2>
+        <%= f.input :ambassador_reward, placeholder: "-X% sur nouveau produit ...", label: false %>
       </div>
       <div class="duo-grid-element" >
-        <h2>Condition validation</h2>
-        <%= f.input :reward_threshold, placeholder: "nouveau client", label: false %>
+        <h2>Débloquée pour ... nouveaux clients</h2>
+        <%= f.input :reward_threshold, placeholder: "XX nouveaux clients", label: false %>
       </div>
     </div>
     <div class="duo-grid">
