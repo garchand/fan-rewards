@@ -2,7 +2,6 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-import "fakeit"
 
 import "chartkick/chart.js"
 
