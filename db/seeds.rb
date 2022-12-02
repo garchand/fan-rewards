@@ -44,13 +44,13 @@ promotion_maroilles.photo.attach(io: file, filename: 'nes.png', content_type: 'i
 puts "Burger au maroilles créé"
 
 date2 = Faker::Date.in_date_period
-file2 = URI.open('https://scontent-cdt1-1.cdninstagram.com/v/t51.2885-15/317156509_176088028426053_2161313780694425130_n.jpg?stp=dst-jpg_e35_p640x640_sh0.08&_nc_ht=scontent-cdt1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=v-bOnJMWFlMAX9AxXMn&edm=ALQROFkBAAAA&ccb=7-5&ig_cache_key=Mjk4MTQwNjgyMTQxMTEzMDA1NQ%3D%3D.2-ccb7-5&oh=00_AfBUzCjZYPkiQafGmj8JsTCJHONIuNal5H54dfuS6njG8Q&oe=638F1732&_nc_sid=30a2ef')
+file2 = URI.open('https://scontent-cdg2-1.cdninstagram.com/v/t51.2885-15/283852038_115950260976128_5678504347294046049_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-cdg2-1.cdninstagram.com&_nc_cat=108&_nc_ohc=6Zee3fvf4YwAX-t-IuG&edm=ALQROFkBAAAA&ccb=7-5&ig_cache_key=Mjg0NzMwODMyMDg4MTI0NTM4Ng%3D%3D.2-ccb7-5&oh=00_AfDobC5FDAkew5Cv_nV0t01GTqlUblFzaEM0dxs9gzyvKw&oe=638EB638&_nc_sid=30a2ef')
 promotion_burger_2 = Campaign.create!(description: "Promotion de burger 'Le simplet'", client_benefit: "-10% sur chaque burger 'Le simplet' acheté", ambassador_reward: "Un menu offert pour 3 nouvelles recommandations obtenues", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaison.id)
 promotion_burger_2.photo.attach(io: file2, filename: 'nes.png', content_type: 'image/jpg')
 puts "Burger le simpelt créé"
 
 date3 = Faker::Date.in_date_period
-file3 = URI.open('https://scontent-cdt1-1.cdninstagram.com/v/t51.2885-15/317156509_176088028426053_2161313780694425130_n.jpg?stp=dst-jpg_e35_p640x640_sh0.08&_nc_ht=scontent-cdt1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=v-bOnJMWFlMAX9AxXMn&edm=ALQROFkBAAAA&ccb=7-5&ig_cache_key=Mjk4MTQwNjgyMTQxMTEzMDA1NQ%3D%3D.2-ccb7-5&oh=00_AfBUzCjZYPkiQafGmj8JsTCJHONIuNal5H54dfuS6njG8Q&oe=638F1732&_nc_sid=30a2ef')
+file3 = URI.open('https://img-3.journaldesfemmes.fr/bFLBfIV2xQoIMyxLHn-ya2A4jO4=/800x600/smart/3fab692feaaf4aeda820708bbb11ada6/recipe-jdf/10018954.jpg')
 promotion_dessert = Campaign.create!(description: "Notre nouveau gâteau au chocolat préféré", client_benefit: "Un gâteau au chocolat acheté = un gâteau au chocolat gratuit", ambassador_reward: "Un menu offert pour 3 nouvelles recommandations obtenues", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaison.id)
 promotion_dessert.photo.attach(io: file3, filename: 'nes.png', content_type: 'image/jpg')
 puts "Gâteau au chocolat créé"
