@@ -98,7 +98,7 @@
           <h1><%= campaign.description %></h1>
           <p class="date-text">Dates : <%= campaign.start_date.to_date %> - <%= campaign.end_date.to_date %></p>
         </div>
-        <%= link_to "gros bouton", campaign_campaigns_ambassadors_path(campaign), data: {turbo_method: :post} %>
+        <%= link_to "Rejoindre la campagne", campaign_campaigns_ambassadors_path(campaign), data: {turbo_method: :post}, class:"btn-flat" %>
       </div>
     </div>
   <% end %>
