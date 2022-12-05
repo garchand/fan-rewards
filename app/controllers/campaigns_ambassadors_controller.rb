@@ -7,6 +7,7 @@ class CampaignsAmbassadorsController < ApplicationController
 
   def create
     @campaign = Campaign.find(params[:campaign_id])
+    authorize @campaign
     @campaign_ambassador = CampaignsAmbassador.new
     @campaign_ambassador.campaign = @campaign
     @campaign_ambassador.user = current_user

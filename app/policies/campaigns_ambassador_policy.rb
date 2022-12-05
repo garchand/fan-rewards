@@ -6,6 +6,10 @@ class CampaignsAmbassadorPolicy < ApplicationPolicy
     # end
   end
 
+  def create?
+    true
+  end
+
   def client_code?
     true
   end
