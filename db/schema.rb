@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_133732) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_154818) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,8 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_133732) do
     t.bigint "campaign_id", null: false
     t.bigint "user_id", null: false
     t.string "client_code"
-    t.integer "referrals_count"
-    t.string "reward_status"
+    t.integer "referrals_count", default: 0
+    t.string "reward_status", default: "pending"
     t.string "ambassador_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
