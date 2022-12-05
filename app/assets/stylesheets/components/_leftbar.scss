@@ -57,6 +57,7 @@
   color:#1C3879;
 }
 
+
 .left-bar-links a:hover {
   color:#6179b0;
 }
@@ -66,6 +67,24 @@
 }
 
 .leftbar-icon{
+  margin-left:10px;
   margin-right:10px;
+  color:#1C3879;
+}
+
+.left-bar-links-active {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 50px;
+  background-color:#e3eafc;
+  color:#1C3879;
+}
+
+.left-bar-links-active a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 50px;
   color:#1C3879;
 }
