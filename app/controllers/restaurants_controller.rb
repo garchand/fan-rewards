@@ -12,13 +12,16 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
     authorize @restaurant
+    raise
   end
 
   def create
     @restaurant = Restaurant.new(restaurants_params)
     @restaurant.user = current_user
+    @chatroom = Chatroom.new
+    @chatroom.restaurant_id = @restaurant.id
     authorize @restaurant
-    if @restaurant.save
+    if (@restaurant.save && @chatroom.save)
       redirect_to restaurant_path(@restaurant)
     else
       render :new, status: :unprocessable_entity

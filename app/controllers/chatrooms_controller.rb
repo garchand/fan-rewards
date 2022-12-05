@@ -8,4 +8,6 @@ class ChatroomsController < ApplicationController
   def new
     @chatroom = Chatroom.new
   end
+
+ 
 end
