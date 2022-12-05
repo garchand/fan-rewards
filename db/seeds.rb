@@ -6,7 +6,9 @@ Campaign.destroy_all
 Restaurant.destroy_all
 User.destroy_all
 Chatroom.destroy_all
+
 Message.destroy_all
+
 
 User.create!(email: "user.test@gmail.com", password: "123456", first_name: "user", last_name: "test", username: "Account")
 User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
@@ -19,6 +21,7 @@ jean_ambassador = User.create!(email: "jean.rougon2@gmail.com", password: "12345
 lamaison = Restaurant.create!(name: "La maison du burger français", description: "La maison du burger français propose à ses clients un burger français fait maison au goût unique. Nous marions le meilleur du fast-food américain et le meilleur de la cuisine française." , address: "4 rue de la porte", user_id: jean.id)
 chatroom = Chatroom.create!(name: "Chatroom La maison du burger français", restaurant_id: lamaison.id)
 puts "Jean et la maison du burger créés"
+Chatroom.create!(name: "La maison du burger français", restaurant_id: lamaison.id)
 
 date = Faker::Date.in_date_period
 file = URI.open('https://mysweetescape.fr/wp-content/uploads/2018/04/burger-chti-maroilles.jpg')
