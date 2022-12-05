@@ -14,7 +14,7 @@
     <% end %>
     </li>
     <% if my_restaurant %>
-      <li class="left-bar-links <%= "d-none" if user_restaurant_owner == false %>"  >
+      <li class="left-bar-links<%= '-active' if controller_name == "pages" && action_name == "stats" %> <%= "d-none" if user_restaurant_owner == false %>"  >
         <i class="fa-solid fa-signal leftbar-icon"></i><%= link_to "Statistiques", restaurant_stats_path(my_restaurant) %>
       </li>
     <% end %>
