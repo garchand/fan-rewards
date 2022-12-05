@@ -10,6 +10,9 @@ application.register("campaign-cancel", CampaignCancelController)
 import ChangePositionController from "./change_position_controller"
 application.register("change-position", ChangePositionController)
 
+import ChatroomSubscriptionController from "./chatroom_subscription_controller"
+application.register("chatroom-subscription", ChatroomSubscriptionController)
+
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
