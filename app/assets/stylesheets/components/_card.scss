@@ -1,9 +1,10 @@
 .card-campaign {
-  margin: 30px 0px 0 30px;
+  margin: 30px 0px 0 0px;
   overflow: hidden;
   border-radius: 10px;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width:100%;
 
   .tilte-date{
     display: flex;
@@ -16,10 +17,6 @@
     font-size: 24px;
   }
 
-}
-
-.card-ambassador{
-  width: 925px !important;
 }
 
 .grey {
