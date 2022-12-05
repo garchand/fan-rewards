@@ -1,6 +1,6 @@
 <div class="left-bar">
   <ul>
-    <li class="left-bar-links">
+    <li class="left-bar-links<%= '-active' if controller_name == "restaurants" && action_name == "show" %>">
     <% if user_signed_in? && current_user.restaurants.count > 0 %>
     <% my_restaurant = current_user.restaurants.first %>
     <% path = restaurant_path(my_restaurant) %>
@@ -19,7 +19,7 @@
       </li>
     <% end %>
     <% if my_restaurant %>
-      <li class="left-bar-links">
+        <li class="left-bar-links<%= '-active' if controller_name == "chatrooms" && action_name == "index" %>">
         <i class="fa-solid fa-comment leftbar-icon"></i><%= link_to "Chat", restaurant_chatrooms_path(my_restaurant) %>
       </li>
     <% end %>
@@ -33,4 +33,5 @@
       <i class="fa-solid fa-house-circle-check leftbar-icon"></i><%= link_to "Ma Page" %>
     </li>
   </ul>
+
 </div>

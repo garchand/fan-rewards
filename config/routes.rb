@@ -12,7 +12,13 @@ Rails.application.routes.draw do
     resources :campaigns_ambassadors, only: %i[create]
   end
 
-resources :chatrooms, only: :show do
-  resources :messages, only: :create
-end
+  resources :campaigns_ambassadors, only: %i[show] do
+    get :client_code
+    get :ambassador_code
+  end
+
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end
