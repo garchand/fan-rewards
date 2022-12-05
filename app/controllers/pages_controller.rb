@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def stats
-    @ambassadors = User.find(5).restaurants_ambassadors
+    @ambassadors = User.all
   end
 end

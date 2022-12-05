@@ -12,7 +12,6 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
     authorize @restaurant
-    raise
   end
 
   def create
