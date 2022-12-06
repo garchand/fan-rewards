@@ -11,6 +11,9 @@ class CampaignsAmbassadorsController < ApplicationController
     @campaign_ambassador = CampaignsAmbassador.new
     @campaign_ambassador.campaign = @campaign
     @campaign_ambassador.user = current_user
+    if @campaign.restaurant.restaurants_ambassadors.where(user_id: current_user.id).empty?
+      RestaurantsAmbassador.create(user: current_user, restaurant: @campaign.restaurant)
+    end
     if @campaign_ambassador.save
       redirect_to restaurant_path(@campaign.restaurant)
     else
