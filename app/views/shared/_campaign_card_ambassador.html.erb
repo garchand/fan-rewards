@@ -42,7 +42,7 @@
                     <%= render "shared/progress_full" %>
                   </button>
               <% else %>
-                <%= render "shared/progress", threshold: campaign.reward_threshold, count: campaign.campaigns_ambassadors.where(user: current_user).first.referrals_count %>
+                <%= render "shared/progress", id: campaign.campaigns_ambassadors.where(user: current_user).first.id, threshold: campaign.reward_threshold, count: campaign.campaigns_ambassadors.where(user: current_user).first.referrals_count %>
               <% end %>
             </li>
                <p class="date-text">Dates : <%= campaign.start_date.to_date %> - <%= campaign.end_date.to_date %></p>
