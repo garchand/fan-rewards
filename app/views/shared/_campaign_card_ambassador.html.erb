@@ -1,6 +1,7 @@
-<% @restaurant.campaigns.order(created_at: :desc).each do |campaign| %>
+<div  class= "card-container-ambassador">
+  <% @restaurant.campaigns.order(created_at: :desc).each do |campaign| %>
+  <div class="ms-0 card-campaign card-ambassador">
   <% if campaign.campaigns_ambassadors.where(user: current_user).count > 0 %>
-    <div class="card-campaign card-ambassador">
       <% if campaign.photo.attached? %>
         <%= cl_image_tag campaign.photo.key %>
       <% else %>
@@ -11,11 +12,11 @@
           <h1><%= campaign.description %></h1>
           <p class="date-text">Dates : <%= campaign.start_date.to_date %> - <%= campaign.end_date.to_date %></p>
         </div>
-        <ul>
+        <ul style="margin: 0px">
 
           <div class="in-line-div">
 
-          <li class="ambassadors margin-left-3">
+          <li style="list-style-type : none" class="ambassadors margin-left-3">
           <h2>Avantage nouveau client</h2>
           <p>
             <%= campaign.ambassador_reward %>
@@ -28,7 +29,7 @@
 
 
 
-          <li class="ambassadors">
+          <li style="list-style-type : none" class="ambassadors">
           <h2>Récompense ambassadeur</h2>
           <p>
             <%= campaign.client_benefit %>
@@ -103,3 +104,4 @@
     </div>
   <% end %>
 <% end %>
+</div>
