@@ -8,8 +8,7 @@ class CampaignsAmbassador < ApplicationRecord
   after_create :get_ambassador_qr_code
 
   def get_client_qr_code
-    qr = RQRCode::QRCode.new("http://localhost:3000/campaigns_ambassadors/#{id}/client_
-      code")
+    qr = RQRCode::QRCode.new("http://localhost:3000/campaigns_ambassadors/#{id}/client_code")
     self.client_code = qr.as_svg(
       color: "000",
       shape_rendering: "crispEdges",
@@ -21,8 +20,7 @@ class CampaignsAmbassador < ApplicationRecord
   end
 
   def get_ambassador_qr_code
-    qr = RQRCode::QRCode.new("http://localhost:3000/campaigns_ambassadors/#{id}/ambassador_
-      code")
+    qr = RQRCode::QRCode.new("http://localhost:3000/campaigns_ambassadors/#{id}/ambassador_code")
     self.ambassador_code = qr.as_svg(
       color: "000",
       shape_rendering: "crispEdges",
