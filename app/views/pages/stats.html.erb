@@ -25,16 +25,16 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="row mx-0 w-100 justify-content-between tab-content-with-margin-bottom">
         <div class= "box-stats-2 first-box">
-          <div class="text-box-stats"><span class="stats-number">250</span><br> ambassadeurs</div>
+          <div class="text-box-stats"><span class="stats-number"><%=  @number_of_ambassadors %></span><br> ambassadeurs</div>
         </div>
         <div class= "box-stats-2">
-          <div class="text-box-stats"><span class="stats-number">+ 35</span><br>vs mois précédent</div>
+          <div class="text-box-stats"><span class="stats-number">+ <%= @number_of_new_ambassadors_over_the_last_30_days %></span><br>vs mois précédent</div>
         </div>
         <div class= "box-stats-2">
-          <div class="text-box-stats"><span class="stats-number">35%</span><br> actifs dans les campagnes</div>
+          <div class="text-box-stats"><span class="stats-number"><%= @percentage_active %></span><br> actifs dans les campagnes</div>
         </div>
-        <div class= "box-stats-2 last-box">
-          <div class="text-box-stats"><span class="stats-number">35%</span><br> actifs dans les campagnes</div>
+        <div class= "box-stats-2 last-box transparent_box">
+          <div class="text-box-stats"><span class="stats-number"></span><br></div>
         </div>
       </div>
       <div class="chart-card">
@@ -49,16 +49,16 @@
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="row mx-0 w-100 justify-content-between tab-content-with-margin-bottom">
         <div class= "box-stats-2 first-box">
-          <div class="text-box-stats"><span class="stats-number">125</span><br> recommandations</div>
+          <div class="text-box-stats"><span class="stats-number"><%= @number_of_referrals %></span><br> recommandations</div>
         </div>
         <div class= "box-stats-2">
-          <div class="text-box-stats"><span class="stats-number">+ 10</span><br>vs mois précédent</div>
+          <div class="text-box-stats"><span class="stats-number">+ <%= @number_of_referrals %></span><br>vs mois précédent</div>
         </div>
         <div class= "box-stats-2">
-          <div class="text-box-stats"><span class="stats-number">20 </span><br> récompenses distribuées aux ambassadeurs</div>
+          <div class="text-box-stats"><span class="stats-number"><%= @number_of_rewards_used %> </span><br> récompenses distribuées aux ambassadeurs</div>
         </div>
-        <div class= "box-stats-2 last-box">
-          <div class="text-box-stats"><span class="stats-number">20 </span><br> récompenses distribuées aux ambassadeurs</div>
+        <div class= "box-stats-2 last-box transparent_box">
+          <div class="text-box-stats"><span class="stats-number"></span><br></div>
         </div>
       </div>
       <div class="chart-card">

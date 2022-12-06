@@ -17,6 +17,8 @@ p "Users created"
 
 jean = User.create!(email: "jean.rougon@gmail.com", password: "1234567890", first_name: "Jean", last_name: "Rougon", username: "JeanRougon")
 jean_ambassador = User.create!(email: "jean.rougon2@gmail.com", password: "1234567890", first_name: "Jean", last_name: "Rougon", username: "JeanRougon2")
+jean_ambassador.created_at = "2022-01-01 00:00:00"
+jean_ambassador.save!
 lamaison = Restaurant.create!(name: "La maison du burger français", description: "La maison du burger français propose à ses clients un burger français fait maison au goût unique. Nous marions le meilleur du fast-food américain et le meilleur de la cuisine française." , address: "4 rue de la porte", user_id: jean.id)
 chatroom = Chatroom.create!(name: "Chatroom La maison du burger français", restaurant_id: lamaison.id)
 puts "Jean et la maison du burger créés"
@@ -67,7 +69,10 @@ marie = User.create!(email: "marie.macquart@gmail.com", password: "1234567890", 
 lamaisondemarie = Restaurant.create!(name: "Salad Bar", description: "Un salad bar en plein centre de Paris." , address: "4 rue de la nourriture", user_id: marie.id)
 chatroom = Chatroom.create!(name: lamaisondemarie.name, restaurant_id: lamaisondemarie.id)
 puts "Marie et la maison de Marie créés"
-
+a0 = RestaurantsAmbassador.new(restaurant_id: lamaisondemarie.id, user_id: jean.id)
+a1 = RestaurantsAmbassador.new(restaurant_id: lamaisondemarie.id, user_id: jean_ambassador.id)
+a0.save!
+a1.save!
 
 date5 = Faker::Date.in_date_period
 file5 = URI.open('https://www.shutterstock.com/image-photo/salad-tomatoes-cucumber-red-onions-260nw-1086358910.jpg')
