@@ -29,7 +29,8 @@ promotion_maroilles.photo.attach(io: file, filename: 'nes.png', content_type: 'i
 puts "Burger au maroilles créé"
 
 date2 = Faker::Date.in_date_period
-file2 = URI.open('https://res.cloudinary.com/djrr59cb5/image/upload/v1670255969/development/9uj1gisptytbncwjk48x28g05b53.jpg')
+file2 = URI.open('https://res.cloudinary.com/dztcugk0f/image/upload/v1669998121/production/yljccsu8v9sja09gvp5vjpoas403.jpg')
+
 promotion_burger_2 = Campaign.create!(description: "Promotion de burger 'Le simplet'", client_benefit: "-10% sur chaque burger 'Le simplet' acheté", ambassador_reward: "Un menu offert", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaison.id)
 promotion_burger_2.photo.attach(io: file2, filename: 'nes.png', content_type: 'image/jpg')
 puts "Burger le simple créé"
