@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   end
 
   def stats
+    @restaurant = Restaurant.find(restaurants_params)
+
     @ambassadors = User.all
     @restaurants = Restaurant.all
     @restaurants_ambassadors = RestaurantsAmbassador.all
