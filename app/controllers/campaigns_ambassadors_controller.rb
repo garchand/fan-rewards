@@ -20,10 +20,17 @@ class CampaignsAmbassadorsController < ApplicationController
 
   def client_code
     @campaign_ambassador = CampaignsAmbassador.find(params[:campaigns_ambassador_id])
+    @campaign = @campaign_ambassador.campaign
     authorize @campaign_ambassador
     if current_user == @campaign_ambassador.campaign.restaurant.user
       @campaign_ambassador.update(referrals_count: @campaign_ambassador.referrals_count += 1)
-      redirect_to restaurant_path(@campaign_ambassador.campaign.restaurant)
+      CampaignsAmbassadorChannel.broadcast_to(
+        @campaign_ambassador,
+        render_to_string(partial: "shared/progress",
+                         locals: { id: @campaign_ambassador.id, count: @campaign_ambassador.referrals_count,
+                                   threshold: @campaign.reward_threshold })
+      )
+      redirect_to restaurant_path(@campaign.restaurant)
     else
       @restaurants = Restaurant.all
       render 'restaurants/index', status: :unprocessable_entity
