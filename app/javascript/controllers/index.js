@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AmbassadorCountController from "./ambassador_count_controller"
+application.register("ambassador-count", AmbassadorCountController)
+
 import CampaignCancelController from "./campaign_cancel_controller"
 application.register("campaign-cancel", CampaignCancelController)
 

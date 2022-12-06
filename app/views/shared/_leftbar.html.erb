@@ -1,26 +1,29 @@
 <div class="left-bar">
   <ul>
     <li class="left-bar-links<%= '-active' if controller_name == "restaurants" && action_name == "show" %>">
-    <% if user_signed_in? && current_user.restaurants.count > 0 %>
-    <% my_restaurant = current_user.restaurants.first %>
-    <% path = restaurant_path(my_restaurant) %>
-    <% user_restaurant_owner = true %>
-    <% else %>
-    <% path = "#" %>
-    <% user_restaurant_owner = false %>
-    <% end %>
-    <%= link_to path do  %>
-      <i class="fa-sharp fa-solid fa-bullseye leftbar-icon"></i>Campagnes
-    <% end %>
+      <% if user_signed_in? && current_user.restaurants.count > 0 %>
+        <% my_restaurant = current_user.restaurants.first %>
+        <% path = restaurant_path(my_restaurant) %>
+        <% user_restaurant_owner = true %>
+      <% elsif @restaurant %>
+        <% path = restaurant_path(@restaurant) %>
+        <% user_restaurant_owner = false %>
+      <% else %>
+      <% end %>
+      <% if @restaurant || (user_signed_in? && current_user.restaurants.count > 0) %>
+        <%= link_to path do  %>
+          <i class="fa-sharp fa-solid fa-bullseye leftbar-icon"></i>Campagnes
+        <% end %>
+      <% end %>
     </li>
     <% if my_restaurant %>
       <li class="left-bar-links<%= '-active' if controller_name == "pages" && action_name == "stats" %> <%= "d-none" if user_restaurant_owner == false %>"  >
         <i class="fa-solid fa-signal leftbar-icon"></i><%= link_to "Statistiques", restaurant_stats_path(my_restaurant) %>
       </li>
     <% end %>
-    <% if my_restaurant %>
+    <% if @restaurant || (user_signed_in? && current_user.restaurants.count > 0) %>
         <li class="left-bar-links<%= '-active' if controller_name == "chatrooms" && action_name == "index" %>">
-        <i class="fa-solid fa-comment leftbar-icon"></i><%= link_to "Chat", restaurant_chatrooms_path(my_restaurant) %>
+        <i class="fa-solid fa-comment leftbar-icon"></i><%= link_to "Chat", restaurant_chatrooms_path(@restaurant) %>
       </li>
     <% end %>
     <li class="left-bar-links">

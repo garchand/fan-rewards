@@ -1,12 +1,22 @@
-<div class="box-qr">
+<div class="box-qr"
+    data-ambassador-count-campaign-id-value="<%= id %>"
+    data-controller="ambassador-count"
+    data-ambassador-count-target="cardProgress"
+>
   <div class="box-qr-image">
     <i class="fa-solid fa-gift image-center"></i>
   </div>
-
-  <div class="box-qr-text">
+  <div
+    class="box-qr-text"
+  >
     <div class="box-qr-text-child">
       <p><%= count %> recommandations sur <%= threshold %> effectuées</p>
-      <progress id="file" max="100" value="<%= (count.to_f / threshold.to_f) * 100 %>" ></progress>
+      <progress
+        data-ambassador-count-target="count"
+        id="file"
+        max="<%= threshold %>"
+        value="<%= count %>" >
+      </progress>
     </div>
   </div>
 </div>
