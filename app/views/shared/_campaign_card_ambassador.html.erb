@@ -1,7 +1,7 @@
 <div  class= "card-container-ambassador">
   <% @restaurant.campaigns.order(created_at: :desc).each do |campaign| %>
-    <div class="ms-0 card-campaign-ambassador">
-      <% if campaign.campaigns_ambassadors.where(user: current_user).count > 0 %>
+    <% if campaign.campaigns_ambassadors.where(user: current_user).count > 0 %>
+      <div class="card-campaign-ambassador">
         <% if campaign.photo.attached? %>
           <%= cl_image_tag campaign.photo.key %>
         <% else %>
@@ -51,39 +51,39 @@
         </div>
 
         <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">QR Code promotion</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">QR Code promotion</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body">
+                <%= campaign.campaigns_ambassadors.where(user: current_user).first.client_code.html_safe %>
+
+              </div>
+              <h1 class="middle-text">Transmettez ce QR code à vos amis !</h1>
             </div>
 
-            <div class="modal-body">
-              <%= campaign.campaigns_ambassadors.where(user: current_user).first.client_code.html_safe %>
-
-            </div>
-            <h1 class="middle-text">Transmettez ce QR code à vos amis !</h1>
           </div>
-
         </div>
-      </div>
 
-      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Récompense débloquée !</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <%= campaign.campaigns_ambassadors.where(user: current_user).first.ambassador_code.html_safe %>
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Récompense débloquée !</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <%= campaign.campaigns_ambassadors.where(user: current_user).first.ambassador_code.html_safe %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     <% end %>
-    </div>
   <% end %>
 
   <% @restaurant.campaigns.order(created_at: :desc).each do |campaign| %>
