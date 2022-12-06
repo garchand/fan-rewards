@@ -6,7 +6,6 @@ Campaign.destroy_all
 Restaurant.destroy_all
 User.destroy_all
 Chatroom.destroy_all
-
 Message.destroy_all
 
 
@@ -31,9 +30,7 @@ puts "Burger au maroilles créé"
 
 date2 = Faker::Date.in_date_period
 file2 = URI.open('https://scontent-cdg2-1.cdninstagram.com/v/t51.2885-15/283852038_115950260976128_5678504347294046049_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-cdg2-1.cdninstagram.com&_nc_cat=108&_nc_ohc=6Zee3fvf4YwAX-t-IuG&edm=ALQROFkBAAAA&ccb=7-5&ig_cache_key=Mjg0NzMwODMyMDg4MTI0NTM4Ng%3D%3D.2-ccb7-5&oh=00_AfDobC5FDAkew5Cv_nV0t01GTqlUblFzaEM0dxs9gzyvKw&oe=638EB638&_nc_sid=30a2ef')
-
 promotion_burger_2 = Campaign.create!(description: "Promotion de burger 'Le simplet'", client_benefit: "-10% sur chaque burger 'Le simplet' acheté", ambassador_reward: "Un menu offert", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaison.id)
-
 promotion_burger_2.photo.attach(io: file2, filename: 'nes.png', content_type: 'image/jpg')
 puts "Burger le simple créé"
 
@@ -87,6 +84,7 @@ puts "Seconde salade créée"
 
 
 a = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
+a.created_at = "2022-10-10 00:00:00"
 b = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
 a.save!
 b.save!
