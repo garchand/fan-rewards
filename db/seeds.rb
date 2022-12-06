@@ -2,11 +2,11 @@ require 'faker'
 require "open-uri"
 
 Chatroom.destroy_all
+Message.destroy_all
 CampaignsAmbassador.destroy_all
 Campaign.destroy_all
 Restaurant.destroy_all
 User.destroy_all
-Message.destroy_all
 
 
 User.create!(email: "user.test@gmail.com", password: "123456", first_name: "user", last_name: "test", username: "Account")
@@ -30,6 +30,7 @@ puts "Burger au maroilles créé"
 
 date2 = Faker::Date.in_date_period
 file2 = URI.open('https://res.cloudinary.com/dztcugk0f/image/upload/v1669998121/production/yljccsu8v9sja09gvp5vjpoas403.jpg')
+
 promotion_burger_2 = Campaign.create!(description: "Promotion de burger 'Le simplet'", client_benefit: "-10% sur chaque burger 'Le simplet' acheté", ambassador_reward: "Un menu offert", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaison.id)
 promotion_burger_2.photo.attach(io: file2, filename: 'nes.png', content_type: 'image/jpg')
 puts "Burger le simple créé"
@@ -76,7 +77,7 @@ puts "Première salade créée"
 
 
 date6 = Faker::Date.in_date_period
-file6 = URI.open('https://4.bp.blogspot.com/-3dy-wPcJwiM/Vt2fYHFtIII/AAAAAAAADXM/BYYmMa_jSJQ/s1600/n.JPG')
+file6 = URI.open('https://www.shutterstock.com/image-photo/salad-tomatoes-cucumber-red-onions-260nw-1086358910.jpg')
 promotion_salad2 = Campaign.create!(description: "Promotion nouvelle offre", client_benefit: "Un topping offert pour chaque salade achetée", ambassador_reward: "Un topping offert", start_date: date, end_date: date.next_day, reward_threshold: 2, active: true, restaurant_id: lamaisondemarie.id)
 promotion_salad2.photo.attach(io: file6, filename: 'nes.png', content_type: 'image/jpg')
 
