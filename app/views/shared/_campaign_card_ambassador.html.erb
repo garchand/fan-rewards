@@ -95,11 +95,19 @@
           <img src="https://www.shutterstock.com/image-photo/green-vegan-salad-leaves-mix-260nw-1519672577.jpg" />
         <% end %>
         <div class="card-campaign-infos">
-          <div class="tilte-date">
-            <h1><%= campaign.description %></h1>
-          </div>
-          <%= link_to "Rejoindre la campagne", campaign_campaigns_ambassadors_path(campaign), data: {turbo_method: :post}, class:"btn-flat" %>
+          <h1><%= campaign.description %></h1>
           <p class="date-text">Dates : <%= campaign.start_date.to_date %> - <%= campaign.end_date.to_date %></p>
+          <h2>Avantage nouveau client</h2>
+          <p>
+            <%= campaign.ambassador_reward %>
+          </p>
+          <h2>Récompense ambassadeur</h2>
+          <p>
+            <%= campaign.client_benefit %>
+          </p>
+          <div class="btn-container">
+            <%= link_to "Rejoindre la campagne", campaign_campaigns_ambassadors_path(campaign), data: {turbo_method: :post}, class:"btn-flat-ambassador" %>
+          </div>
         </div>
       </div>
     <% end %>

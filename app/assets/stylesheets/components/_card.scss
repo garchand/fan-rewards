@@ -52,6 +52,7 @@
 
   .card-campaign-infos {
     box-sizing: border-box;
+    flex-grow: 1;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
@@ -182,6 +183,13 @@
   width: 146px;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
 .card-new-event {
   padding: 30px;
   margin: 30px;
@@ -191,7 +199,6 @@
   border-radius: 10px;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-
   box-sizing: border-box;
 
   h2 {
