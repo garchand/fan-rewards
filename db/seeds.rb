@@ -56,14 +56,14 @@ puts "Gâteau au chocolat créé"
   end
 end
 
-# 5.times do
-#   user = User.all.sample
-#   campaign = Campaign.all.sample.id.to_i
-#   unless user.campaigns.all.ids.include?(campaign)
-#     CampaignsAmbassador.create!(user_id: user.id, campaign_id: campaign)
-#     p "ambassador created"
-#   end
-# end
+5.times do
+  user = User.all.sample
+  campaign = Campaign.all.sample.id.to_i
+  unless user.campaigns.all.ids.include?(campaign)
+    CampaignsAmbassador.create!(user_id: user.id, campaign_id: campaign)
+    p "ambassador created"
+  end
+end
 
 marie = User.create!(email: "marie.macquart@gmail.com", password: "1234567890", first_name: "Marie", last_name: "Macquart", username: "MarieMacquart")
 lamaisondemarie = Restaurant.create!(name: "Salad Bar", description: "Un salad bar en plein centre de Paris." , address: "4 rue de la nourriture", user_id: marie.id)
@@ -88,8 +88,8 @@ promotion_salad2.photo.attach(io: file6, filename: 'nes.png', content_type: 'ima
 
 puts "Seconde salade créée"
 
-# a = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
-# a.created_at = "2022-10-10 00:00:00"
-# b = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
-# a.save!
-# b.save!
+a = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
+a.created_at = "2022-10-10 00:00:00"
+b = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
+a.save!
+b.save!
