@@ -83,16 +83,10 @@ puts "Première salade créée"
 
 date6 = Faker::Date.in_date_period
 file6 = URI.open('https://www.regal.fr/sites/art-de-vivre/files/Import/R84-salade-italie_ss.jpg')
-promotion_salad2 = Campaign.create!(description: "Nouvelle salade de saison", client_benefit: "Un topping offert pour chaque salade achetée", ambassador_reward: "Un topping offert", start_date: "2022-10-01", end_date: "2023-01-01", reward_threshold: 2, active: true, restaurant_id: lamaisondemarie.id)
+promotion_salad2 = Campaign.create!(description: "Nouvelle salade de saison", client_benefit: "Un topping offert pour chaque salade achetée", ambassador_reward: "Un topping offert", start_date: "2022-10-01", end_date: "2023-01-01", reward_threshold: 1, active: true, restaurant_id: lamaisondemarie.id)
 promotion_salad2.photo.attach(io: file6, filename: 'nes.png', content_type: 'image/jpg')
 
 puts "Seconde salade créée"
-
-a = CampaignsAmbassador.create(campaign: promotion_salad2, user: jean_ambassador)
-a.created_at = "2022-10-10 00:00:00"
-b = CampaignsAmbassador.create(campaign: promotion_salad2, user: jean_ambassador)
-a.save!
-b.save!
 
 
 
