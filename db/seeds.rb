@@ -20,9 +20,8 @@ jean_ambassador = User.create!(email: "jean.rougon2@gmail.com", password: "12345
 jean_ambassador.created_at = "2022-01-01 00:00:00"
 jean_ambassador.save!
 lamaison = Restaurant.create!(name: "La maison du burger français", description: "La maison du burger français propose à ses clients un burger français fait maison au goût unique. Nous marions le meilleur du fast-food américain et le meilleur de la cuisine française." , address: "4 rue de la porte", user_id: jean.id)
-chatroom = Chatroom.create!(name: "Chatroom La maison du burger français", restaurant_id: lamaison.id)
+chatroom_la_maison_du_burger_francais = Chatroom.create!(name: "Chatroom La maison du burger français", restaurant_id: lamaison.id)
 puts "Jean et la maison du burger créés"
-Chatroom.create!(name: "La maison du burger français", restaurant_id: lamaison.id)
 
 date = Faker::Date.in_date_period
 file = URI.open('https://mysweetescape.fr/wp-content/uploads/2018/04/burger-chti-maroilles.jpg')
@@ -66,6 +65,8 @@ end
 end
 
 marie = User.create!(email: "marie.macquart@gmail.com", password: "1234567890", first_name: "Marie", last_name: "Macquart", username: "MarieMacquart")
+julien = User.create!(email: "julien.rochon@gmail.com", password: "1234567890", first_name: "Julien", last_name: "Rochon", username: "JulienRochon")
+david = User.create!(email: "david.petit@gmail.com", password: "1234567890", first_name: "David", last_name: "Petit", username: "DavidPetit")
 lamaisondemarie = Restaurant.create!(name: "Salad Bar", description: "Un salad bar en plein centre de Paris." , address: "4 rue de la nourriture", user_id: marie.id)
 chatroom = Chatroom.create!(name: lamaisondemarie.name, restaurant_id: lamaisondemarie.id)
 puts "Marie et la maison de Marie créés"
@@ -83,18 +84,36 @@ puts "Première salade créée"
 
 date6 = Faker::Date.in_date_period
 file6 = URI.open('https://www.regal.fr/sites/art-de-vivre/files/Import/R84-salade-italie_ss.jpg')
-promotion_salad2 = Campaign.create!(description: "Nouvelle salade de saison", client_benefit: "Un topping offert pour chaque salade achetée", ambassador_reward: "Un topping offert", start_date: "2022-10-01", end_date: "2023-01-01", reward_threshold: 2, active: true, restaurant_id: lamaisondemarie.id)
+promotion_salad2 = Campaign.create!(description: "Nouvelle salade de saison", client_benefit: "Un topping offert pour chaque salade achetée", ambassador_reward: "Un topping offert", start_date: "2022-10-01", end_date: "2023-01-01", reward_threshold: 1, active: true, restaurant_id: lamaisondemarie.id)
 promotion_salad2.photo.attach(io: file6, filename: 'nes.png', content_type: 'image/jpg')
 
 puts "Seconde salade créée"
 
-a = CampaignsAmbassador.create(campaign: promotion_salad2, user: jean_ambassador)
-a.created_at = "2022-10-10 00:00:00"
-b = CampaignsAmbassador.create(campaign: promotion_salad2, user: jean_ambassador)
+
+puts "Début création conv."
+
+a = Message.create!(content: "Bonjour. Pour fêter la première année du restaurant, j’organise une soirée la semaine prochaine ! Venez nombreux !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: jean.id, created_at: "2022-11-08 09:00:00" )
 a.save!
-b.save!
 
+a = Message.create!(content: "Je serai présent !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: david.id, created_at:  "2022-11-09 10:02:00")
+a.save!
 
+a = Message.create!(content: "Ok, je serai là, merci pour l’info !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: julien.id, created_at:  "2022-11-09 11:30:00")
+a.save!
+
+a = Message.create!(content: "Nous serons présents aussi !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: marie.id, created_at:  "2022-11-09 12:12:00")
+a.save!
+
+a = Message.create!(content: "Bonjour, j’ai lancé récemment une nouveau burger au chèvre et voudrais avoir votre avis, pourriez-vous me dire ce que vous aimeriez changer ? 🍔", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: jean.id, created_at:  "2022-11-10 08:00:00")
+a.save!
+
+a = Message.create!(content: "J'ai aimé : Très bon, viande extra, sauce délicieuse, pain moelleux et non bourratif ! Un régale !!!", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: julien.id, created_at:  "2022-11-10 09:34:00" )
+a.save!
+
+a = Message.create!(content: "Bonne suprise .. mais je n'ai pas aimé la nouvelle sauce blanche ... pourquoi ne feriez-vous pas un burger à la truffe pour les fêtes de fin d'année ?", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: david.id, created_at:  "2022-11-10 10:52:00" )
+a.save!
+
+puts "Fin création conv."
 
 5.times do
   user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
