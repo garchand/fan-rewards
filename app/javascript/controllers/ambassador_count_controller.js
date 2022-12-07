@@ -12,6 +12,7 @@ export default class extends Controller {
         received: data => this.cardProgressTarget.outerHTML = data
       }
     )
+    console.log("localhost:3000/campaigns_ambassadors/" + this.campaignIdValue + "/client_code");
   }
   disconnect() {
     console.log("Unsubscribed from the campaign ambassador")
