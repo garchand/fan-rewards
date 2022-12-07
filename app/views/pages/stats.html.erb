@@ -41,7 +41,7 @@
         <h5><strong>Ambassadeurs</strong></h5>
         <div class="chart-card-container">
           <div class="chart">
-            <%= area_chart  @ambassadors.group_by_month(:created_at).count, id: "chart-stats", colors: ["#1C3879", "#666"] %>
+            <%= area_chart  @result_cumulated_number_of_ambassadors, id: "chart-stats", colors: ["#1C3879", "#666"] %>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
         <h5><strong>Recommandations</strong></h5>
         <div class="chart-card-container">
           <div class="chart">
-            <%= area_chart  @ambassadors.group_by_month(:created_at).count, id: "chart-stats-2", colors: ["#1C3879", "#666"] %>
+            <%= area_chart  @result_cumulated_number_of_ambassadors, id: "chart-stats-2", colors: ["#1C3879", "#666"] %>
           </div>
         </div>
       </div>
