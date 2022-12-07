@@ -33,7 +33,7 @@ puts "Burger au maroilles créé"
 date2 = Faker::Date.in_date_period
 file2 = URI.open('https://mysweetescape.fr/wp-content/uploads/2018/04/burger-chti-maroilles.jpg')
 
-promotion_burger_2 = Campaign.create!(description: "Promotion de burger 'Le simplet'", client_benefit: "-10% sur chaque burger 'Le simplet' acheté", ambassador_reward: "Un menu offert", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaison.id)
+promotion_burger_2 = Campaign.create!(description: "Promotion de burger 'Le simple'", client_benefit: "-10% sur chaque burger 'Le simple' acheté", ambassador_reward: "Un menu offert", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaison.id)
 promotion_burger_2.photo.attach(io: file2, filename: 'nes.png', content_type: 'image/jpg')
 puts "Burger le simple créé"
 
@@ -93,3 +93,145 @@ a.created_at = "2022-10-10 00:00:00"
 b = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
 a.save!
 b.save!
+
+
+
+5.times do
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
+  user.created_at = "2022-01-01 00:00:00"
+  campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user)
+  campaign.created_at = "2022-01-01 00:00:00"
+  restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
+  restaurants_ambassador.created_at = "2022-01-01 00:00:00"
+  user.save!
+  campaign.save!
+  restaurants_ambassador.save!
+end
+
+p "5 users created"
+
+5.times do
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
+  user.created_at = "2022-03-01 00:00:00"
+  campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user)
+  campaign.created_at = "2022-03-01 00:00:00"
+  restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
+  restaurants_ambassador.created_at = "2022-03-01 00:00:00"
+  user.save!
+  campaign.save!
+  restaurants_ambassador.save!
+end
+
+p "5 users created"
+
+5.times do
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
+  user.created_at = "2022-05-01 00:00:00"
+  campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user, referrals_count: 1, reward_status: "used")
+  campaign.created_at = "2022-05-01 00:00:00"
+  restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
+  restaurants_ambassador.created_at = "2022-05-01 00:00:00"
+  user.save!
+  campaign.save!
+  restaurants_ambassador.save!
+end
+
+p "5 users created"
+
+10.times do
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
+  user.created_at = "2022-06-01 00:00:00"
+  campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user)
+  campaign.created_at = "2022-06-01 00:00:00"
+  restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
+  restaurants_ambassador.created_at = "2022-06-01 00:00:00"
+  user.save!
+  campaign.save!
+  restaurants_ambassador.save!
+end
+
+p "10 users created"
+
+5.times do
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
+  user.created_at = "2022-07-01 00:00:00"
+  campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user, referrals_count: 1, reward_status: "pending")
+  campaign.created_at = "2022-07-01 00:00:00"
+  restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
+  restaurants_ambassador.created_at = "2022-07-01 00:00:00"
+  user.save!
+  campaign.save!
+  restaurants_ambassador.save!
+end
+
+p "5 users created"
+
+10.times do
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
+  user.created_at = "2022-08-01 00:00:00"
+  campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user, referrals_count: 1, reward_status: "pending")
+  campaign.created_at = "2022-08-01 00:00:00"
+  restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
+  restaurants_ambassador.created_at = "2022-08-01 00:00:00"
+  user.save!
+  campaign.save!
+  restaurants_ambassador.save!
+end
+
+p "10 users created"
+
+20.times do
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
+  user.created_at = "2022-09-01 00:00:00"
+  campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user, referrals_count: 1, reward_status: "pending")
+  campaign.created_at = "2022-09-01 00:00:00"
+  restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
+  restaurants_ambassador.created_at = "2022-09-01 00:00:00"
+  user.save!
+  campaign.save!
+  restaurants_ambassador.save!
+end
+
+p "20 users created"
+
+25.times do
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
+  user.created_at = "2022-10-01 00:00:00"
+  campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user, referrals_count: 3, reward_status: "used")
+  campaign.created_at = "2022-10-01 00:00:00"
+  restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
+  restaurants_ambassador.created_at = "2022-10-01 00:00:00"
+  user.save!
+  campaign.save!
+  restaurants_ambassador.save!
+end
+
+p "25 users created"
+
+35.times do
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
+  user.created_at = "2022-11-01 00:00:00"
+  campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user, referrals_count: 3, reward_status: "pending")
+  campaign.created_at = "2022-11-01 00:00:00"
+  restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
+  restaurants_ambassador.created_at = "2022-11-01 00:00:00"
+  user.save!
+  campaign.save!
+  restaurants_ambassador.save!
+end
+
+p "35 users created"
+
+45.times do
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
+  user.created_at = "2022-12-01 00:00:00"
+  campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user, referrals_count: 4, reward_status: "pending")
+  campaign.created_at = "2022-12-01 00:00:00"
+  restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
+  restaurants_ambassador.created_at = "2022-12-01 00:00:00"
+  user.save!
+  campaign.save!
+  restaurants_ambassador.save!
+end
+
+p "45 users created"
