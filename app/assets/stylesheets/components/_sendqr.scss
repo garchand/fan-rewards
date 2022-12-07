@@ -8,6 +8,41 @@
   display: flex;
   margin: 10px 0px;
 
+  h2 {
+    margin-top: 0px;
+  }
+
+}
+
+.box-qr-success {
+  background-color: #1C3879;
+  width: 401px;
+  height: 75px;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  margin: 10px 0px;
+
+  h2 {
+    color:white;
+    margin-top: 0px;
+  }
+
+  p {
+    color:white;
+  }
+
+  i {
+    color:white;
+  }
+
+}
+
+.box-qr-success:hover {
+  background: #4D04C4;
+  color: white;
+  cursor:pointer;
 }
 
 .box-qr-image {
@@ -46,6 +81,7 @@ i {
 .box-qr-text-child {
   font-size: 0px !important;
 }
+
 
 
 .ambassadors > .btn-none {
