@@ -41,4 +41,4 @@ en:
     hints:
       defaults:
         username: "Nom d'utilisateur de connexion"
-        password: "Pas de caractères spéciaux s'il vous plait."
+        password: "Pas de caractères spéciaux s'il vous plait"
