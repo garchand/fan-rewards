@@ -27,12 +27,19 @@ class CampaignsAmbassadorsController < ApplicationController
     authorize @campaign_ambassador
     if current_user == @campaign_ambassador.campaign.restaurant.user
       @campaign_ambassador.update(referrals_count: @campaign_ambassador.referrals_count += 1)
-      CampaignsAmbassadorChannel.broadcast_to(
-        @campaign_ambassador,
-        render_to_string(partial: "shared/progress",
-                         locals: { id: @campaign_ambassador.id, count: @campaign_ambassador.referrals_count,
-                                   threshold: @campaign.reward_threshold })
-      )
+      if @campaign_ambassador.referrals_count >= @campaign.reward_threshold
+        CampaignsAmbassadorChannel.broadcast_to(
+          @campaign_ambassador,
+          render_to_string(partial: "shared/progress_full")
+        )
+      else
+        CampaignsAmbassadorChannel.broadcast_to(
+          @campaign_ambassador,
+          render_to_string(partial: "shared/progress",
+                           locals: { id: @campaign_ambassador.id, count: @campaign_ambassador.referrals_count,
+                                     threshold: @campaign.reward_threshold })
+        )
+      end
       redirect_to restaurant_path(@campaign.restaurant)
     else
       @restaurants = Restaurant.all
