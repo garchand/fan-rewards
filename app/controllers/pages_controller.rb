@@ -23,11 +23,13 @@ class PagesController < ApplicationController
 
     @campaigns_of_the_restaurant = @campaigns.where(restaurant_id: @current_restaurant.id)
     number_of_ambassadors_active = CampaignsAmbassador.where(campaigns: @campaigns_of_the_restaurant).count
+
     if @number_of_ambassadors.to_f == 0
       @percentage_active = "NA"
     else
       @percentage_active = (number_of_ambassadors_active.to_f / @number_of_ambassadors.to_f * 100).round(0).to_s + "%"
     end
+
     @number_of_referrals = CampaignsAmbassador.where(campaigns: @campaigns_of_the_restaurant).sum(:referrals_count)
 
     @number_of_rewards_used = CampaignsAmbassador.where(campaigns: @campaigns_of_the_restaurant).where(reward_status: "used").count
