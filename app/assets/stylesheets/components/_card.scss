@@ -70,7 +70,6 @@
 }
 
 .card-campaign-ambassador>img {
-  height: 440px;
   width: 40%;
   object-fit: cover;
 }
@@ -110,7 +109,6 @@
   font-size: 20px;
   padding-bottom: 5px;
   font-weight: bold;
-  margin-top: 20px;
   margin-bottom: 0;
 }
 
@@ -128,11 +126,11 @@
   flex-direction: column;
   justify-content: space-between;
 
+  li {
+    margin-top: 10px;
+  }
   .ambassadors{
     width: 100%;
-    p {
-      height: 30px;
-    }
   }
   .customers{
     width: 80%;
@@ -186,7 +184,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 160px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .card-new-event {
@@ -300,7 +299,7 @@
 
 p.date-text{
   font-style: italic;
-  font-size:18px;
+  font-size: 16px;
 }
 
 
@@ -375,4 +374,8 @@ p.date-text{
   margin: auto;
   font-size: 25px;
   margin-top: 10px;
+}
+
+.box-with-margin-bottom {
+  margin-bottom: 20px !important;
 }
