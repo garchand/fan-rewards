@@ -1,3 +1,5 @@
+<% content_for :meta_title, @restaurant.name %>
+<% content_for :meta_description, @restaurant.description %>
 <% if @restaurant.user == current_user %>
   <div class="d-flex justify-content-center">
     <%= render 'shared/campaign_card_owner', restaurant: @restaurant %>
