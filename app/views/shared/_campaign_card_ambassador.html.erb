@@ -1,6 +1,7 @@
 <div  class= "card-container-ambassador">
   <% @restaurant.campaigns.order(created_at: :desc).each do |campaign| %>
     <% if campaign.campaigns_ambassadors.where(user: current_user).count > 0 %>
+    <% camp = campaign.campaigns_ambassadors.where(user: current_user).first %>
       <div class="card-campaign-ambassador">
         <% if campaign.photo.attached? %>
           <%= cl_image_tag campaign.photo.key %>
@@ -22,7 +23,7 @@
               <%= campaign.ambassador_reward %>
             </p>
               <!-- condition à ajouter -->
-              <button type="button" class="btn-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <button type="button" class="btn-none" data-bs-toggle="modal" data-bs-target="#client-modal-<%= camp.id  %>">
                 <%= render "shared/sendcode" %>
               </button>
             </li>
@@ -38,12 +39,12 @@
 
           <!--  <a class="btn btn-flat card-campaign-user" href="#">join</a> -->
           <!-- condition à ajouter -->
-              <% if campaign.campaigns_ambassadors.where(user: current_user).first.referrals_count >= campaign.reward_threshold %>
-                  <button type="button" class="btn-none" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+              <% if camp.referrals_count >= campaign.reward_threshold %>
+                  <button type="button" class="btn-none" data-bs-toggle="modal" data-bs-target="#ambassador-modal-<%= camp.id  %>">
                     <%= render "shared/progress_full" %>
                   </button>
               <% else %>
-                <%= render "shared/progress", id: campaign.campaigns_ambassadors.where(user: current_user).first.id, threshold: campaign.reward_threshold, count: campaign.campaigns_ambassadors.where(user: current_user).first.referrals_count %>
+                <%= render "shared/progress", id: camp.id, threshold: campaign.reward_threshold, count: camp.referrals_count %>
               <% end %>
             </li>
             </div>
@@ -51,7 +52,7 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="client-modal-<%= camp.id  %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -60,7 +61,7 @@
               </div>
 
               <div class="modal-body">
-                <%= campaign.campaigns_ambassadors.where(user: current_user).first.client_code.html_safe %>
+                <%= camp.client_code.html_safe %>
 
               </div>
               <h1 class="middle-text">Transmettez ce QR code à vos amis !</h1>
@@ -69,7 +70,7 @@
           </div>
         </div>
 
-        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="ambassador-modal-<%= camp.id  %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -77,7 +78,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <%= campaign.campaigns_ambassadors.where(user: current_user).first.ambassador_code.html_safe %>
+                <%= camp.ambassador_code.html_safe %>
               </div>
             </div>
           </div>
