@@ -2,7 +2,8 @@
 <html>
   <head>
     <%= favicon_link_tag asset_path('frfavicon.png') %>
-    <title>FanRewards</title>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,7 +14,7 @@
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
     <div class="main-container">
-        <%= render "shared/leftbar" %>
+      <%= render "shared/leftbar" %>
       <div class="main-content">
         <%= yield %>
       </div>
