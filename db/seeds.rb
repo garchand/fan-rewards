@@ -26,20 +26,20 @@ Chatroom.create!(name: "La maison du burger français", restaurant_id: lamaison.
 
 date = Faker::Date.in_date_period
 file = URI.open('https://mysweetescape.fr/wp-content/uploads/2018/04/burger-chti-maroilles.jpg')
-promotion_maroilles = Campaign.create!(description: "Promotion nouveau burger 'Le maroilles'", client_benefit: "-10% sur chaque burger 'Le maroilles' acheté", ambassador_reward: "Un menu offert", start_date: date, end_date: date.next_day, reward_threshold: 5, active: true, restaurant_id: lamaison.id)
+promotion_maroilles = Campaign.create!(description: "Nouveau burger 'Le maroilles'", client_benefit: "-10% sur chaque burger 'Le maroilles' acheté", ambassador_reward: "Un menu offert", start_date: "2022-01-01", end_date: "2022-08-01", reward_threshold: 5, active: true, restaurant_id: lamaison.id)
 promotion_maroilles.photo.attach(io: file, filename: 'nes.png', content_type: 'image/jpg')
 puts "Burger au maroilles créé"
 
 date2 = Faker::Date.in_date_period
-file2 = URI.open('https://mysweetescape.fr/wp-content/uploads/2018/04/burger-chti-maroilles.jpg')
+file2 = URI.open('https://scontent-cdt1-1.cdninstagram.com/v/t51.2885-15/317156509_176088028426053_2161313780694425130_n.jpg?stp=dst-jpg_e35&_nc_ht=scontent-cdt1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=jQoYnmITWNQAX-QA0Tu&edm=ALQROFkBAAAA&ccb=7-5&ig_cache_key=Mjk4MTQwNjgyMTQxMTEzMDA1NQ%3D%3D.2-ccb7-5&oh=00_AfA-QDkNNtqkvDWu0Lc2sUCwEuRHGHaWI6o506YEoNjdjQ&oe=639505F2&_nc_sid=30a2ef')
 
-promotion_burger_2 = Campaign.create!(description: "Promotion de burger 'Le simple'", client_benefit: "-10% sur chaque burger 'Le simple' acheté", ambassador_reward: "Un menu offert", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaison.id)
+promotion_burger_2 = Campaign.create!(description: "Burger 'Le simple'", client_benefit: "-10% sur chaque burger 'Le simple' acheté", ambassador_reward: "Un menu offert", start_date: "2022-08-01", end_date: "2023-01-01", reward_threshold: 3, active: true, restaurant_id: lamaison.id)
 promotion_burger_2.photo.attach(io: file2, filename: 'nes.png', content_type: 'image/jpg')
 puts "Burger le simple créé"
 
 date3 = Faker::Date.in_date_period
 file3 = URI.open('https://img-3.journaldesfemmes.fr/bFLBfIV2xQoIMyxLHn-ya2A4jO4=/800x600/smart/3fab692feaaf4aeda820708bbb11ada6/recipe-jdf/10018954.jpg')
-promotion_dessert = Campaign.create!(description: "Notre nouveau gâteau au chocolat préféré", client_benefit: "Un gâteau au chocolat acheté = un offert", ambassador_reward: "Un menu offert", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaison.id)
+promotion_dessert = Campaign.create!(description: "Notre nouveau gâteau au chocolat préféré", client_benefit: "Un gâteau au chocolat acheté = un offert", ambassador_reward: "Un menu offert", start_date: "2022-08-01", end_date: "2023-01-01", reward_threshold: 3, active: true, restaurant_id: lamaison.id)
 promotion_dessert.photo.attach(io: file3, filename: 'nes.png', content_type: 'image/jpg')
 puts "Gâteau au chocolat créé"
 
@@ -75,22 +75,22 @@ a0.save!
 a1.save!
 
 date5 = Faker::Date.in_date_period
-file5 = URI.open('https://www.shutterstock.com/image-photo/salad-tomatoes-cucumber-red-onions-260nw-1086358910.jpg')
-promotion_salad = Campaign.create!(description: "Promotion nouvelle salade 5 ingrédients", client_benefit: "-20% sur une salade avec 5 ingrédients", ambassador_reward: "Un menu offert", start_date: date, end_date: date.next_day, reward_threshold: 3, active: true, restaurant_id: lamaisondemarie.id)
+file5 = URI.open('https://4.bp.blogspot.com/-3dy-wPcJwiM/Vt2fYHFtIII/AAAAAAAADXM/BYYmMa_jSJQ/s1600/n.JPG')
+promotion_salad = Campaign.create!(description: "Promotion salade 5 ingrédients", client_benefit: "-20% sur une salade avec 5 ingrédients", ambassador_reward: "Un menu offert", start_date: "2022-07-01", end_date: "2023-01-01", reward_threshold: 3, active: true, restaurant_id: lamaisondemarie.id)
 promotion_salad.photo.attach(io: file5, filename: 'nes.png', content_type: 'image/jpg')
 puts "Première salade créée"
 
 
 date6 = Faker::Date.in_date_period
-file6 = URI.open('https://4.bp.blogspot.com/-3dy-wPcJwiM/Vt2fYHFtIII/AAAAAAAADXM/BYYmMa_jSJQ/s1600/n.JPG')
-promotion_salad2 = Campaign.create!(description: "Promotion nouvelle offre", client_benefit: "Un topping offert pour chaque salade achetée", ambassador_reward: "Un topping offert", start_date: date, end_date: date.next_day, reward_threshold: 2, active: true, restaurant_id: lamaisondemarie.id)
+file6 = URI.open('https://www.regal.fr/sites/art-de-vivre/files/Import/R84-salade-italie_ss.jpg')
+promotion_salad2 = Campaign.create!(description: "Nouvelle salade de saison", client_benefit: "Un topping offert pour chaque salade achetée", ambassador_reward: "Un topping offert", start_date: "2022-10-01", end_date: "2023-01-01", reward_threshold: 2, active: true, restaurant_id: lamaisondemarie.id)
 promotion_salad2.photo.attach(io: file6, filename: 'nes.png', content_type: 'image/jpg')
 
 puts "Seconde salade créée"
 
-a = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
+a = CampaignsAmbassador.create(campaign: promotion_salad2, user: jean_ambassador)
 a.created_at = "2022-10-10 00:00:00"
-b = CampaignsAmbassador.create(campaign: promotion_salad, user: jean_ambassador)
+b = CampaignsAmbassador.create(campaign: promotion_salad2, user: jean_ambassador)
 a.save!
 b.save!
 
