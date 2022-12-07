@@ -30,7 +30,7 @@
 
 
 
-            <li style="list-style-type : none" class="ambassadors">
+            <li style="list-style-type : none" class="ambassadors box-with-margin-bottom">
             <h2>Récompense ambassadeur</h2>
             <p>
               <%= campaign.client_benefit %>
@@ -98,7 +98,6 @@
         <div class="card-campaign-infos">
           <h1><%= campaign.description %></h1>
           <p class="date-text">Dates : <%= campaign.start_date.to_date %> - <%= campaign.end_date.to_date %></p>
-          <br>
           <h2>Avantage nouveau client</h2>
           <p>
             <%= campaign.ambassador_reward %>
