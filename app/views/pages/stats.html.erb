@@ -52,20 +52,20 @@
           <div class="text-box-stats"><span class="stats-number"><%= @number_of_referrals %></span><br> recommandations</div>
         </div>
         <div class= "box-stats-2">
-          <div class="text-box-stats"><span class="stats-number">+ <%= @number_of_referrals %></span><br>vs mois précédent</div>
+          <div class="text-box-stats"><span class="stats-number">+ <%= @number_of_campaign_ambassador_over_the_last_30_days %></span><br>vs mois précédent</div>
         </div>
         <div class= "box-stats-2">
-          <div class="text-box-stats"><span class="stats-number"><%= @number_of_rewards_used %> </span><br> récompenses distribuées aux ambassadeurs</div>
+          <div class="text-box-stats"><span class="stats-number"><%= @ratio_referrals_per_ambassador %>x</span><br> nouveaux clients par ambassadeur actif</div>
         </div>
-        <div class= "box-stats-2 last-box transparent_box">
-          <div class="text-box-stats"><span class="stats-number"></span><br></div>
+        <div class= "box-stats-2 last-box">
+          <div class="text-box-stats"><span class="stats-number"><%= @number_of_rewards_used %> </span><br> récompenses distribuées aux ambassadeurs</div>
         </div>
       </div>
       <div class="chart-card">
         <h5><strong>Recommandations</strong></h5>
         <div class="chart-card-container">
           <div class="chart">
-            <%= area_chart  @result_cumulated_number_of_ambassadors, id: "chart-stats-2", colors: ["#1C3879", "#666"] %>
+            <%= area_chart  @result_cumulated_number_of_campaign_ambassadors, id: "chart-stats-2", colors: ["#1C3879", "#666"] %>
           </div>
         </div>
       </div>
