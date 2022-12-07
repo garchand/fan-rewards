@@ -24,7 +24,7 @@
       <p class="date-text">Dates : <%= campaign.start_date.to_date %> - <%= campaign.end_date.to_date %></p>
       <div class="options nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">...</div>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" data-campaign-cancel-target="options" >
-        <li style="list-style-type : none"><a class="dropdown-item fs-6" href="#">Voir Statistiques</a></li>
+        <li style="list-style-type : none"><%= link_to "Statistiques", restaurant_stats_path(campaign.restaurant), class: "dropdown-item fs-6"%></li>
         <li style="list-style-type : none">
           <%= form_for campaign , html: { 'data-campaign-cancel-target': "camp", 'data-action': "click->campaign-cancel#cancel:prevent click->change-position#change:prevent" } do |f| %>
             <%= f.submit "Arrêter campagne", class: "dropdown-item fs-6"%>
