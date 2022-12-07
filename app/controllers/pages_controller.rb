@@ -59,6 +59,7 @@ class PagesController < ApplicationController
     end
 
     @ratio_referrals_per_ambassador = (@number_of_referrals / (@number_of_ambassadors.to_f * ratio_active / 100)).round(1)
+
   end
 
   private
