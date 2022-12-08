@@ -40,9 +40,7 @@
           <!--  <a class="btn btn-flat card-campaign-user" href="#">join</a> -->
           <!-- condition à ajouter -->
               <% if camp.referrals_count >= campaign.reward_threshold %>
-                  <button type="button" class="btn-none" data-bs-toggle="modal" data-bs-target="#ambassador-modal-<%= camp.id  %>">
-                    <%= render "shared/progress_full" %>
-                  </button>
+                  <%= render "shared/progress_full", camp: camp %>
               <% else %>
                 <%= render "shared/progress", id: camp.id, threshold: campaign.reward_threshold, count: camp.referrals_count %>
               <% end %>
