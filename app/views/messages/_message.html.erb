@@ -1,4 +1,4 @@
-<div id="message-<%= message.id %>">
+<div class = <%= "blue-bg" if message.user == restaurant.user%>  id="message-<%= message.id %>">
   <small>
     <strong><%= message.user.first_name %> <%= message.user.last_name %></strong>
     <i class="small-text"><%= (message.created_at + 1.hours).strftime("%Hh%M") %></i>

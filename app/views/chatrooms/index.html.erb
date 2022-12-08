@@ -4,7 +4,7 @@
 >
   <div class="messages mx-auto mt-4 mb-3" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+      <%= render "messages/message", message: message, restaurant: @restaurant %>
     <% end %>
   </div>
 
