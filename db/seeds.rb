@@ -92,25 +92,25 @@ puts "Seconde salade créée"
 
 puts "Début création conv."
 
-a = Message.create!(content: "Bonjour. Pour fêter la première année du restaurant, j’organise une soirée la semaine prochaine ! Venez nombreux !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: jean.id, created_at: "2022-11-08 09:00:00" )
+a = Message.create!(content: "Bonjour. Pour fêter la première année du restaurant, j’organise une soirée la semaine prochaine ! Venez nombreux !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: jean.id, created_at: "2022-12-07 09:00:00" )
 a.save!
 
-a = Message.create!(content: "Je serai présent !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: david.id, created_at:  "2022-11-09 10:02:00")
+a = Message.create!(content: "Je serai présent !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: david.id, created_at:  "2022-12-09 10:02:00")
 a.save!
 
-a = Message.create!(content: "Ok, je serai là, merci pour l’info !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: julien.id, created_at:  "2022-11-09 11:30:00")
+a = Message.create!(content: "Ok, je serai là, merci pour l’info !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: julien.id, created_at:  "2022-12-09 11:30:00")
 a.save!
 
-a = Message.create!(content: "Nous serons présents aussi !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: marie.id, created_at:  "2022-11-09 12:12:00")
+a = Message.create!(content: "Nous serons présents aussi !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: marie.id, created_at:  "2022-12-09 12:12:00")
 a.save!
 
-a = Message.create!(content: "Bonjour, j’ai lancé récemment une nouveau burger au chèvre et voudrais avoir votre avis, pourriez-vous me dire ce que vous aimeriez changer ? 🍔", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: jean.id, created_at:  "2022-11-10 08:00:00")
+a = Message.create!(content: "Bonjour, j’ai lancé récemment une nouveau burger au chèvre et voudrais avoir votre avis, pourriez-vous me dire ce que vous aimeriez changer ? 🍔", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: jean.id, created_at:  "2022-12-10 08:00:00")
 a.save!
 
-a = Message.create!(content: "J'ai aimé : Très bon, viande extra, sauce délicieuse, pain moelleux et non bourratif ! Un régale !!!", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: julien.id, created_at:  "2022-11-10 09:34:00" )
+a = Message.create!(content: "J'ai aimé : Très bon, viande extra, sauce délicieuse, pain moelleux et non bourratif ! Un régale !!!", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: julien.id, created_at:  "2022-12-10 09:34:00" )
 a.save!
 
-a = Message.create!(content: "Bonne suprise .. mais je n'ai pas aimé la nouvelle sauce blanche ... pourquoi ne feriez-vous pas un burger à la truffe pour les fêtes de fin d'année ?", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: david.id, created_at:  "2022-11-10 10:52:00" )
+a = Message.create!(content: "Bonne suprise .. mais je n'ai pas aimé la nouvelle sauce blanche ... pourquoi ne feriez-vous pas un burger à la truffe pour les fêtes de fin d'année ?", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: david.id, created_at:  "2022-12-10 10:52:00" )
 a.save!
 
 puts "Fin création conv."
@@ -229,11 +229,11 @@ p "25 users created"
 
 35.times do
   user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Job.position)
-  user.created_at = "2022-11-01 00:00:00"
+  user.created_at = "2022-12-01 00:00:00"
   campaign = CampaignsAmbassador.create(campaign: promotion_maroilles, user: user, referrals_count: 3, reward_status: "pending")
-  campaign.created_at = "2022-11-01 00:00:00"
+  campaign.created_at = "2022-12-01 00:00:00"
   restaurants_ambassador = RestaurantsAmbassador.new(restaurant_id: lamaison.id, user_id: user.id)
-  restaurants_ambassador.created_at = "2022-11-01 00:00:00"
+  restaurants_ambassador.created_at = "2022-12-01 00:00:00"
   user.save!
   campaign.save!
   restaurants_ambassador.save!
