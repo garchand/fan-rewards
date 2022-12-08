@@ -42,17 +42,17 @@ promotion_dessert = Campaign.create!(description: "Notre nouveau gâteau au choc
 promotion_dessert.photo.attach(io: file3, filename: 'nes.png', content_type: 'image/jpg')
 puts "Gâteau au chocolat créé"
 
-1.times do
-  restaurant_random = Restaurant.create!(name: Faker::Restaurant.name, description: Faker::Restaurant.description, address: Faker::Address.street_address, user_id: User.all.sample.id)
-  chatroom = Chatroom.create!(name: restaurant_random.name, restaurant_id: restaurant_random.id)
-  p "Restaurant created"
-  2.times do
-    date = Faker::Date.in_date_period
-    Campaign.create!(description: Faker::Lorem.paragraph, client_benefit: "benef", ambassador_reward: "reward",
-                     start_date: date, end_date: date.next_day, reward_threshold: 3,
-                     active: true, restaurant_id: Restaurant.last.id)
-    p "Campaign created"
-  end
+seb = User.create!(email: "seb@gmail.com", password: "1234567890", first_name: "Seb", last_name: "Cuthbert", username: "SebC")
+seb.save!
+restaurant_random = Restaurant.create!(name: Faker::Restaurant.name, description: Faker::Restaurant.description, address: Faker::Address.street_address, user: seb)
+chatroom = Chatroom.create!(name: restaurant_random.name, restaurant_id: restaurant_random.id)
+p "seb's Restaurant created"
+2.times do
+  date = Faker::Date.in_date_period
+  Campaign.create!(description: Faker::Lorem.paragraph, client_benefit: "benef", ambassador_reward: "reward",
+                    start_date: date, end_date: date.next_day, reward_threshold: 3,
+                    active: true, restaurant_id: Restaurant.last.id)
+  p "Campaign created"
 end
 
 5.times do
@@ -67,7 +67,7 @@ end
 marie = User.create!(email: "marie.macquart@gmail.com", password: "1234567890", first_name: "Marie", last_name: "Macquart", username: "MarieMacquart")
 julien = User.create!(email: "julien.rochon@gmail.com", password: "1234567890", first_name: "Julien", last_name: "Rochon", username: "JulienRochon")
 david = User.create!(email: "david.petit@gmail.com", password: "1234567890", first_name: "David", last_name: "Petit", username: "DavidPetit")
-lamaisondemarie = Restaurant.create!(name: "Salad Bar", description: "Un salad bar en plein centre de Paris." , address: "4 rue de la nourriture", user_id: marie.id)
+lamaisondemarie = Restaurant.create!(name: "Salad Bar", description: "Un salad bar en plein centre de Paris.", address: "4 rue de la nourriture", user_id: marie.id)
 chatroom = Chatroom.create!(name: lamaisondemarie.name, restaurant_id: lamaisondemarie.id)
 puts "Marie et la maison de Marie créés"
 a0 = RestaurantsAmbassador.new(restaurant_id: lamaisondemarie.id, user_id: jean.id)
