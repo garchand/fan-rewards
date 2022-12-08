@@ -30,7 +30,7 @@ class CampaignsAmbassadorsController < ApplicationController
       if @campaign_ambassador.referrals_count >= @campaign.reward_threshold
         CampaignsAmbassadorChannel.broadcast_to(
           @campaign_ambassador,
-          render_to_string(partial: "shared/progress_full")
+          render_to_string(partial: "shared/progress_full", locals: { camp: @campaign_ambassador })
         )
       else
         CampaignsAmbassadorChannel.broadcast_to(
