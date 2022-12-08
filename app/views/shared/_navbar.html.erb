@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= 'nav-bar-non-active' if controller_name == "pages" && action_name == "home" %>">
   <div class="container-fluid">
     <% unless current_user.nil? %>
       <% current_user.restaurants.count > 0 ? path = restaurant_path(current_user.restaurants.first) : path = restaurants_path %>
@@ -34,7 +34,7 @@
         <% else %>
           <li class="nav-item-inline">
             <%= link_to "Espace ambassadeur", new_user_session_path, class: "nav-link" %>
-            <%= link_to "Connexion restaurateur", new_user_session_path, class: "nav-link nav-button" %>
+            <strong><%= link_to "Connexion", new_user_session_path, class: "nav-link nav-button" %></strong>
           </li>
         <% end %>
       </ul>
