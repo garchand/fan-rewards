@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
-    root 'devise/sessions#new'
+    root 'pages#home'
   end
   resources :restaurants, only: %i[index new create show] do
     resources :campaigns, only: %i[new create]

@@ -28,8 +28,9 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
+          <li class="nav-item-inline">
+            <%= link_to "Espace ambassadeur", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Connexion restaurateur", new_user_session_path, class: "nav-link nav-button" %>
           </li>
         <% end %>
       </ul>
