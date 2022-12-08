@@ -10,7 +10,8 @@
     class="box-qr-text"
   >
     <div class="box-qr-text-child">
-      <p><%= count %> recommandations sur <%= threshold %> effectuées</p>
+
+      <p><%= count %> recommandation<%= count > 1 ? "s" : "" %> sur <%= threshold %> effectuée<%= threshold > 1 ? "s" : "" %></p>
       <progress
         data-ambassador-count-target="count"
         id="file"
