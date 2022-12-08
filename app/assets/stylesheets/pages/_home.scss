@@ -10,7 +10,11 @@
 .container-home-img {
   width: 550px;
   height: 500px;
-  background-color: darkblue;
+}
+
+.home-img {
+  width: 550px;
+  height: 500px;
 }
 
 .container-home-inline {
@@ -19,8 +23,8 @@
 }
 
 .container-home-text {
-  width: 540px;
-  padding: 20px;
+  width: 520px;
+  padding: 40px;
   display: flex;
   align-items: center;
 }
@@ -31,7 +35,7 @@
 }
 
 .container-home-text-child > h1 {
-  font-size: 28px;
+  font-size: 32px;
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
 }
