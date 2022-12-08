@@ -18,7 +18,9 @@
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
     <div class="main-container">
-      <%= render "shared/leftbar" %>
+      <% if params[:id] || params[:restaurant_id] %>
+        <%= render "shared/leftbar" %>
+      <% end %>
       <div class="main-content">
         <%= yield %>
       </div>
