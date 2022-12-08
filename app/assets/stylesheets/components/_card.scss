@@ -226,6 +226,8 @@
     background-color: grey;
     border-radius: 10px;
     position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .plus{
@@ -236,6 +238,10 @@
     background-color: black;
     color: white;
     font-weight: bolder;
+  }
+
+  .plus:hover{
+    cursor: pointer;
   }
 
   .duo-grid{
