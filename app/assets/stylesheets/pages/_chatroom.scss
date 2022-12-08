@@ -9,10 +9,6 @@
 
   .messages {
     background: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 0px;
     height: 75vh;
     width: 65vw;
 /*     margin: 20px 20px 0;
@@ -20,8 +16,6 @@
     max-height: 75vh;
     overflow-x: scroll;
     box-shadow: 0 0 10px 0px grey;
-
-
   }
 
   form#new_message {
@@ -56,4 +50,15 @@
   .radius-btn-chatroom {
     border-radius: 0px 4px 4px 0px !important;
   }
+
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.message-with-padding {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 10px !important;
 }

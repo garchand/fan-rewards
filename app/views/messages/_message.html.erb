@@ -1,4 +1,4 @@
-<div class = <%= "blue-bg" if message.user == restaurant.user%>  id="message-<%= message.id %>">
+<div class = "message-with-padding <%= "blue-bg" if message.user == restaurant.user%>"  id="message-<%= message.id %>">
   <% if Date.today ==  message.created_at.to_date %>
     <% date = "aujourd'hui" %>
   <% elsif Date.today == message.created_at.to_date + 1 %>
