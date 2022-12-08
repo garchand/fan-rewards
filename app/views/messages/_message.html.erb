@@ -8,7 +8,11 @@
   <% end %>
 
   <small>
-    <strong><%= message.user.first_name %> <%= message.user.last_name %></strong>
+    <strong>
+     <%= message.user.first_name %> <%= message.user.last_name %></strong>
+     <% if message.user == restaurant.user %>
+    <i class="fa-solid fa-shop text-dark"></i>
+    <% end %>
     <i class="small-text"><%= "#{date}, à #{(message.created_at + 1.hours).strftime("%Hh%M")}" %></i>
   </small>
   <p><%= message.content %></p>
