@@ -92,25 +92,25 @@ puts "Seconde salade créée"
 
 puts "Début création conv."
 
-a = Message.create!(content: "Bonjour. Pour fêter la première année du restaurant, j’organise une soirée la semaine prochaine ! Venez nombreux !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: jean.id, created_at: "2022-12-07 09:00:00" )
+a = Message.create!(content: "Bonjour. Pour fêter la première année du restaurant, j’organise une soirée la semaine prochaine ! Venez nombreux !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: jean.id, created_at: "2022-11-20 09:00:00" )
 a.save!
 
-a = Message.create!(content: "Je serai présent !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: david.id, created_at:  "2022-12-09 10:02:00")
+a = Message.create!(content: "Je serai présent !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: david.id, created_at:  "2022-11-21 10:02:00")
 a.save!
 
-a = Message.create!(content: "Ok, je serai là, merci pour l’info !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: julien.id, created_at:  "2022-12-09 11:30:00")
+a = Message.create!(content: "Ok, je serai là, merci pour l’info !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: julien.id, created_at:  "2022-11-21 11:30:00")
 a.save!
 
-a = Message.create!(content: "Nous serons présents aussi !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: marie.id, created_at:  "2022-12-09 12:12:00")
+a = Message.create!(content: "Nous serons présents aussi !", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: marie.id, created_at:  "2022-11-21 12:12:00")
 a.save!
 
-a = Message.create!(content: "Bonjour, j’ai lancé récemment une nouveau burger au chèvre et voudrais avoir votre avis, pourriez-vous me dire ce que vous aimeriez changer ? 🍔", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: jean.id, created_at:  "2022-12-10 08:00:00")
+a = Message.create!(content: "Bonjour, j’ai lancé récemment une nouveau burger au chèvre et voudrais avoir votre avis, pourriez-vous me dire ce que vous aimeriez changer ? 🍔", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: jean.id, created_at:  "2022-12-01 08:00:00")
 a.save!
 
-a = Message.create!(content: "J'ai aimé : Très bon, viande extra, sauce délicieuse, pain moelleux et non bourratif ! Un régale !!!", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: julien.id, created_at:  "2022-12-10 09:34:00" )
+a = Message.create!(content: "J'ai aimé : Très bon, viande extra, sauce délicieuse, pain moelleux et non bourratif ! Un régale !!!", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: julien.id, created_at:  "2022-12-01 09:34:00" )
 a.save!
 
-a = Message.create!(content: "Bonne suprise .. mais je n'ai pas aimé la nouvelle sauce blanche ... pourquoi ne feriez-vous pas un burger à la truffe pour les fêtes de fin d'année ?", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: david.id, created_at:  "2022-12-10 10:52:00" )
+a = Message.create!(content: "Bonne suprise .. mais je n'ai pas aimé la nouvelle sauce blanche ... pourquoi ne feriez-vous pas un burger à la truffe pour les fêtes de fin d'année ?", chatroom_id: chatroom_la_maison_du_burger_francais.id, user_id: david.id, created_at:  "2022-12-01 10:52:00" )
 a.save!
 
 puts "Fin création conv."
